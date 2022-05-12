@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>OviOS Linux</title>
+    <link rel="icon" type="image/png" href="/images/Favicon.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <section class="navigation-section" id="nav-Section">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a href="">
+          <img src="/images/LogoImage.png" style="margin-left: 15%" alt="" />
+        </a>
+        <a class="navbar-brand" style="margin-left: 1%" href="">Ovi OS Linux</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav ms-auto">
+            <li class="navbar-item">
+              <a href="" class="nav-link">Home</a>
+            </li>
+            <li class="navbar-item">
+              <a
+                href="https://www.ovios.org/download-ovios-linux"
+                class="nav-link"
+                >Download</a
+              >
+            </li>
+            <li class="navbar-item">
+              <div class="dropdown">
+                <button
+                  class="btn btn-dark dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Documentation
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark"
+                  aria-labelledby="dropdownMenuButton2"
+                >
+                  <li>
+                    <a
+                      class="dropdown-item active"
+                      href="https://www.ovios.org/documentation/the-admin-guide"
+                      >The Admin Guide</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://www.ovios.org/documentation/system-backup-and-system-live-guide"
+                      >System backup and system live guide</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://www.ovios.org/documentation/the-autosnap-guide"
+                      >The 'autosnap' Guide</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://www.ovios.org/documentation/the-bondadm-guide"
+                      >The 'bondadm' Guide</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://www.ovios.org/documentation/the-options-guide"
+                      >The 'options' Guide</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="https://www.ovios.org/documentation/the-ovios-ha-cluster-guide"
+                      >The OviOS HA Cluster Guide</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="navbar-item">
+              <a class="nav-link" href="https://www.ovios.org/use-cases"
+                >Use Cases</a
+              >
+            </li>
+            <li class="navbar-item">
+              <a class="nav-link" href="https://www.ovios.org/faqs-features"
+                >FAQ & Features</a
+              >
+            </li>
+            <li class="navbar-item">
+              <a class="nav-link" href="https://www.ovios.org/contact"
+                >Contact</a
+              >
+            </li>
+            <li class="navbar-item">
+              <a class="nav-link" href="https://www.ovios.org/services"
+                >Services</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+    <!-- Video -->
+    <section class="title-section" id="title-section">
+      <div class="row" id="firstPageContainer">
+        <div class="col-xl-6" id="videolLogo">
+          <video width="1200" height="600" autoplay>
+            <source src="Images/CuLinuxMic.mp4" type="video/mp4" />
+            <!-- <source src="Images/CuLinuxMic.ogg" type="video/ogg"> -->
+          </video>
+        </div>
+        <div class="col-xl-6" id="textTitle">
+          <h1>Welcome to the OviOS Linux distribution website</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features observer-section">
+      <div class="row feature-container">
+        <div class="col-md-6 server-container">
+          <a href="https://www.ovios.org/use-cases" target="_blank">
+            <div>
+              <h4>Run OviOS in your own Datacenter</h4>
+              <i class="fa-solid fa-server"></i>
+              <p class="features-text">
+                Install OviOS on your own HW and take advantage of all features
+                and never worry about performance.
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 cloud-container">
+          <a href="https://hub.docker.com/r/ovios/ovios" target="_blank">
+            <div>
+              <h4>Run OviOS in the cloud as a container</h4>
+              <i class="fa-solid fa-cloud-arrow-down"></i>
+              <p class="features-text">
+                Get the latest image from our docker page.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="text-description">
+        <p>
+          &nbsp&nbsp&nbsp&nbsp<strong>OviOS Linux</strong> is a specialized
+          Linux distribution aimed at creating the fastest and easiest Linux
+          unified storage server. It requires little to no knowledge of Linux,
+          NFS, SMB or iSCSI protocols to create a fully functional storage
+          server in less than 30 minutes, simply by following the 4 steps in the
+          <a
+            href="https://www.ovios.org/documentation/the-admin-guide"
+            target="_blank"
+            style="text-decoration-line: underline"
+            >Admin Guide</a
+          >
+          .
+        </p>
+        <p>
+          &nbsp&nbsp&nbsp&nbspOviOS was the first storage system based on Linux
+          to implement the
+          <a
+            href="https://www.kernel.org/doc/html/latest/block/blk-mq.html"
+            target="_blank"
+            style="text-decoration-line: underline"
+            >blk_mq</a
+          >
+          IO Queueing mechanism in a production environment together with the
+          highly advanced ZFS storage filesystem. blk_mq allows for over 15
+          million IOPS with high-performance flash devices on 8 socker-servers,
+          though even single and dual socket servers also benefit considerably
+          from blk-mq.
+        </p>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="observer-section">
+      <h2>OviOS Linux principles:</h2>
+      <div class="row cards">
+        <div class="col-md-6 mt-5">
+          <div href="" class="pop">
+            <div class="bubble">
+              <div class="inner">
+                <img src="Images/customizable2.png" alt="" />
+              </div>
+            </div>
+            <h3>Customizable</h3>
+            <em></em>
+            <p>
+              OviOS is highly customizable, as new packages can be added easily
+              by building from source. The OS functionality is customizable via
+              the options tool.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 mt-5">
+          <div href="" class="pop">
+            <div class="bubble">
+              <div class="inner">
+                <img src="Images/independent.png" alt="" />
+              </div>
+            </div>
+            <h3>Independent</h3>
+            <em></em>
+            <p>
+              OviOS Linux is not based on or derived from any other Linux
+              Distro, and is fully compatible with the Linux Standard Base.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 mt-5">
+          <div href="" class="pop">
+            <div class="bubble">
+              <div class="inner">
+                <img src="Images/simple.png" alt="" />
+              </div>
+            </div>
+            <h3>Simple</h3>
+            <em></em>
+            <p>
+              OviOS simplicity means no extra software, configurations and
+              sophistications. OviOS uses the minimal amount of applications
+              needed to allow it to function as a storage OS. The modifications
+              to the software included are minimal and only distro-specific.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 mt-5">
+          <div href="" class="pop">
+            <div class="bubble">
+              <div class="inner">
+                <img src="Images/lightweight1.png" alt="" />
+              </div>
+            </div>
+            <h3>Lightweight</h3>
+            <em></em>
+            <p>
+              The Linux Kernel is stripped of all drivers and modules not
+              required for a server distro. Lightweight also means no GUI. A GUI
+              just makes simple tasks simpler, and complex task impossible. A
+              GUI would also require considerable amount of resources, which can
+              be better used to serve data.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-12 mt-5">
+          <div href="" class="pop">
+            <div class="bubble">
+              <div class="inner">
+                <img src="Images/target.png" alt="" />
+              </div>
+            </div>
+            <h3>Target</h3>
+            <em></em>
+            <p>
+              The goal is to keep OviOS Linux a pure storage appliance-like OS.
+            </p>
+            <p>
+              It targets users and admins who need a stable out-of-the-box
+              iSCSI, NFS, SMB server, and Linux and storage engineers who want
+              to learn how to build a system from scratch.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End Cards -->
+    <section class="observer-section">
+      <div class="text-after-cards" style="padding-top: 3rem">
+        <h4>
+          The OviOS Linux iso image can also be used as a rescue image for ZFS
+          on Linux systems.
+        </h4>
+        <div class="text">
+          <p>
+            After the system starts, disable the skip import option and start
+            zfs-admin:
+          </p>
+          <p
+            style="
+              background-clip: padding-box;
+              width: 500px;
+              background-color: rgba(255, 252, 252, 0.068);
+              border-bottom: none;
+              border-left: 0.75pt solid rgba(255, 255, 255, 0.122);
+              border-right: 0.75pt solid rgba(255, 255, 255, 0.122);
+              border-top: 0.75pt solid rgba(255, 255, 255, 0.122);
+              margin-bottom: 0;
+              margin-top: 0;
+              padding-bottom: 0;
+              padding-left: 4pt;
+              padding-right: 4pt;
+              padding-top: 4pt;
+              text-align: left;
+            "
+          >
+            <span style="font-family: Source Code Pro; font-weight: normal"
+              >ovios-shell&gt; options skip.import off</span
+            >
+          </p>
+          <p
+            style="
+              background-clip: padding-box;
+              width: 500px;
+              background-color: rgba(255, 252, 252, 0.068);
+              border-bottom: 0.75pt solid rgba(255, 255, 255, 0.122);
+              border-left: 0.75pt solid rgba(255, 255, 255, 0.122);
+              border-right: 0.75pt solid rgba(255, 255, 255, 0.122);
+              border-top: none;
+              margin-bottom: 0;
+              margin-top: 0;
+              padding-bottom: 4pt;
+              padding-left: 4pt;
+              padding-right: 4pt;
+              padding-top: 0;
+              text-align: left;
+              box-shadow: 0 0.4rem 0.8rem 0 rgba(4, 126, 220, 0.308);
+            "
+          >
+            <span style="font-family: Source Code Pro; font-weight: normal"
+              >ovios-shell&gt; options force.import on
+            </span>
+          </p>
+          <p style="padding-top: 2rem">
+            This option is needed if the pool was previously imported by a
+            system with a different hostid:
+          </p>
+          <p
+            style="
+              background-clip: padding-box;
+              width: 500px;
+              background-color: rgba(255, 252, 252, 0.068);
+              border-bottom: 0.75pt solid rgba(255, 255, 255, 0.122);
+              border-left: 0.75pt solid rgba(255, 255, 255, 0.122);
+              border-right: 0.75pt solid rgba(255, 255, 255, 0.122);
+              border-top: 0.75pt solid rgba(255, 255, 255, 0.122);
+              margin-bottom: 0;
+              margin-top: 0;
+              padding-bottom: 4pt;
+              padding-left: 4pt;
+              padding-right: 4pt;
+              padding-top: 4pt;
+              text-align: left;
+              box-shadow: 0 0.4rem 0.8rem 0 rgba(4, 126, 220, 0.308);
+            "
+          >
+            <span style="font-family: Source Code Pro; font-weight: normal"
+              >ovios-shell&gt; zfs-admin start</span
+            >
+          </p>
+          <br />
+          <p>
+            See the <a href="">OviOS Live guide</a> to learn how to use OviOS
+            without installing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video carousel -->
+    <section class="observer-section">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="tutorial-text">
+              <h2>OviOS Linux tutorial Part 1 - Initial Setup</h2>
+            </div>
+            <iframe
+              class="setup-video"
+              sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-modals"
+              frameborder="0"
+              aria-label="YouTube Video, OviOS Linux tutorial Part 1 (Setup)"
+              src="https://www.youtube.com/embed/H63jtK1NIZc"
+              allowfullscreen=""
+            ></iframe>
+          </div>
+          <div class="carousel-item">
+            <div class="tutorial-text">
+              <h2>OviOS Linux tutorial Part 2 - Replication</h2>
+            </div>
+            <iframe
+              class="setup-video"
+              sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-modals"
+              frameborder="0"
+              aria-label="YouTube Video, OviOS Linux tutorial Part 2 (Replication)"
+              src="https://www.youtube.com/embed/MStk2kJ-WKA"
+              allowfullscreen=""
+            ></iframe>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Plain text -->
+    <section class="observer-section">
+      <div class="plain-text">
+        <p>
+          All packages have been built and tested in house. A list of installed
+          packages can be found here.
+        </p>
+        <p>
+          OviOS uses pacman as a package manager. However there is no relation
+          between Arch Linux or any other Linux distro and OviOS Linux.
+        </p>
+        <p>
+          The system is provided with all needed packages for a stable storage
+          server. Due to the way it's built, storage admins can add more
+          packages, by building from source.
+        </p>
+        <p>There are 2 ways this can be achieved:</p>
+        <ol>
+          <li>
+            Build using the general build method (./configure && make && make
+            install)
+          </li>
+          <li>
+            Build using makepkg and a PKGBUILD. See and example here. or send a
+            request for a specific package via email / contact form.
+          </li>
+        </ol>
+        <p>
+          With OviOS Linux the user has complete control over how the system
+          should work, what extra packages are needed and what services should
+          run.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="row div-container">
+        <div class="col-md-3 div-footer sign">
+          <a href="">
+            <img
+              src="/images/Favicon copy.png"
+              width="130px"
+              style="margin-left: 15%"
+              alt=""
+            />
+            <a class="navbar-brand footer-text-logo" href="">Ovi OS Linux</a>
+          </a>
+        </div>
+        <div class="col-md-3 div-footer">
+          <h5>Documentation</h5>
+          <br />
+          <a href="https://www.ovios.org/documentation/the-admin-guide"
+            >The Admin Guide</a
+          >
+          <br />
+          <a
+            href="https://www.ovios.org/documentation/system-backup-and-system-live-guide"
+            >System backup and system live guide</a
+          >
+          <br />
+          <a href="https://www.ovios.org/documentation/the-autosnap-guide"
+            >The 'autosnap' Guide</a
+          >
+          <br />
+          <a href="https://www.ovios.org/documentation/the-bondadm-guide"
+            >The 'bondadm' Guide</a
+          >
+          <br />
+          <a href="https://www.ovios.org/documentation/the-options-guide"
+            >The 'options' Guide</a
+          >
+          <br />
+          <a
+            href="https://www.ovios.org/documentation/the-ovios-ha-cluster-guide"
+            >The OviOS HA Cluster Guide</a
+          >
+          <br /><br /><br />
+        </div>
+        <div class="col-md-3 div-footer">
+          <h5>Technology</h5>
+          <br />
+          <a href="https://www.ovios.org/download-ovios-linux">Download</a>
+          <br />
+          <a href="https://www.ovios.org/use-cases">Use Cases</a>
+          <br />
+          <a href="https://www.ovios.org/faqs-features">FAQ & Features</a>
+          <br />
+          <a href="https://www.ovios.org/services">Services</a>
+          <br /><br /><br />
+        </div>
+        <div class="col-md-3 div-footer">
+          <h5>Contact</h5>
+          <br />
+          <a href="https://www.ovios.org/contact">ovi@ovios.org</a>
+        </div>
+      </div>
+      <div class="social-media-logos">
+        <a href="https://twitter.com/ovioslinux" target="_blank">
+          <i class="fa-brands fa-twitter"></i
+        ></a>
+        <a
+          href="https://www.youtube.com/c/oviosorgstorage/videos"
+          target="_blank"
+          ><i class="fa-brands fa-youtube"></i
+        ></a>
+        <p class="copyright-text">Copyright © 2012-2022 OviOS Linux</p>
+      </div>
+    </footer>
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "ovi",
+  "version": "1.0.0",
+  "description": "OviOS Linux ",
+  "default": "script.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Paul cu Ovi",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.5.0"
+  }
+}
