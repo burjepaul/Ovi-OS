@@ -280,6 +280,10 @@ img {
 }
 
 @media (max-width: 414px) {
+  body {
+    margin-left: 35%;
+  }
+
   .navbar-logo, .navbar-brand {
     width: 45px;
   }
