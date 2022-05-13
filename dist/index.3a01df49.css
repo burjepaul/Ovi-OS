@@ -280,8 +280,8 @@ img {
 }
 
 @media (max-width: 414px) {
-  body {
-    margin-left: 35%;
+  .navbar {
+    width: 80%;
   }
 
   .navbar-logo, .navbar-brand {
@@ -297,6 +297,17 @@ img {
 
   #textTitle h1 {
     font-size: 150%;
+  }
+
+  .setup-video {
+    width: 350px;
+    height: 350px;
+    margin-left: -150px;
+    padding-bottom: 3rem;
+  }
+
+  .carousel-inner h2 {
+    margin-left: -150px;
   }
 }
 
