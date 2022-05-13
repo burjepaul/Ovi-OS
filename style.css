@@ -8,7 +8,7 @@ body {
   background-color: black;
 }
 
-a{
+.features a, a{
   text-decoration: none;
   color: white;
 }
@@ -63,7 +63,6 @@ footer{
 /* Features */
 
 .features{
-  color: white;
   text-align: center;
   justify-content: center;
 }
@@ -90,9 +89,9 @@ footer{
 
 
 .server-container:hover, .cloud-container:hover{
+  color: rgb(119, 76, 187);
   background-color: rgba(34, 36, 39, 0.438);
   cursor: pointer;
-  color: rgb(119, 76, 187);
   transform: translate(0, -10px);
 }
 
@@ -286,5 +285,26 @@ img {
 
   .carousel-inner h2{
     margin-left: -250px;
+  }
+}
+
+@media (max-width: 414px) {
+
+  .navbar-logo{
+    width: 45px;
+  }
+
+  .navbar-brand{
+    width: 45px;
+  }
+
+  video {
+    width: 400px;
+    height: 200px;
+    display: block; margin: auto;
+  }
+
+  #textTitle h1{
+    font-size: 150%;
   }
 }

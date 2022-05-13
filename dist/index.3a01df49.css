@@ -8,7 +8,7 @@ body {
   margin: 0;
 }
 
-a {
+.features a, a {
   color: #fff;
   text-decoration: none;
 }
@@ -60,7 +60,6 @@ footer {
 }
 
 .features {
-  color: #fff;
   text-align: center;
   justify-content: center;
 }
@@ -87,8 +86,8 @@ footer {
 }
 
 .server-container:hover, .cloud-container:hover {
-  cursor: pointer;
   color: #774cbb;
+  cursor: pointer;
   background-color: #22242770;
   transform: translate(0, -10px);
 }
@@ -277,6 +276,23 @@ img {
 
   .carousel-inner h2 {
     margin-left: -250px;
+  }
+}
+
+@media (max-width: 414px) {
+  .navbar-logo, .navbar-brand {
+    width: 45px;
+  }
+
+  video {
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    display: block;
+  }
+
+  #textTitle h1 {
+    font-size: 150%;
   }
 }
 
