@@ -290,7 +290,7 @@ img {
 
 @media (max-width: 414px) {
   .navbar{
-    width: 80%;
+    max-width: 100%;
   }
 
   .navbar-logo{
