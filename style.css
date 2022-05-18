@@ -288,7 +288,7 @@ img {
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 414px) {
   .navbar{
     max-width: 100%;
   }
