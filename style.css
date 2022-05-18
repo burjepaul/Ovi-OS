@@ -291,8 +291,8 @@ img {
 
 @media (max-width: 414px) {
   body{
-    margin-left: 150px;
-    margin-right: -150px;
+    margin-left: 80px;
+    margin-right: -220px;
   }
 
   .navbar{
