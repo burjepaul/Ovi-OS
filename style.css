@@ -237,6 +237,7 @@ img {
 }
 
 @media (max-width: 1220px) {
+
   video {
     width: 750px;
     height: 400px;
@@ -289,6 +290,11 @@ img {
 }
 
 @media (max-width: 414px) {
+  body{
+    margin-left: 100px;
+    margin-right: -100px;
+  }
+
   .navbar{
     max-width: 100%;
   }
