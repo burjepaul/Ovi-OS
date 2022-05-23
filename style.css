@@ -296,8 +296,8 @@ img {
 
 @media (max-width: 414px) {
   body {
-    margin-left: 80px;
-    margin-right: -220px;
+    margin-left: 60px;
+    margin-right: -240px;
   }
 
   .navbar {
@@ -337,8 +337,8 @@ img {
   /* Download Page */
 
   .download-body-tag{
-    margin-left: 30px;
-    margin-right: -130px;
+    margin-left: 20px;
+    margin-right: -140px;
   }
 
   .download-video{
