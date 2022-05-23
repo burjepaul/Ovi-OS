@@ -337,8 +337,8 @@ img {
   /* Download Page */
 
   .download-body-tag{
-    margin-left: 60px;
-    margin-right: -100px;
+    margin-left: 30px;
+    margin-right: -130px;
   }
 
   .download-video{
@@ -364,6 +364,7 @@ img {
 }
 .download-btns {
   transition: transform 0.3s ease-out;
+  padding-bottom: 3rem;
 }
 
 .download-btns:hover {
