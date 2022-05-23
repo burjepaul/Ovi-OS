@@ -40,6 +40,8 @@ footer {
   background: rgb(46, 8, 107);
   color: white;
 }
+
+
 .title-section {
   padding-top: 4%;
 }
@@ -333,10 +335,17 @@ img {
   }
 
   /* Download Page */
+
+  .download-body-tag{
+    margin-left: 80px;
+    margin-right: -80px;
+  }
+
   .download-video{
     width: 200px;
     height: 200px;
     padding-bottom: 3rem;
+    margin-left: -120px;
   }
 }
 
