@@ -340,7 +340,7 @@ img {
   .download-body-tag{
     font-size: larger;
     margin-left: 10px;
-    margin-right: -100px;
+    margin-right: -170px;
   }
 
   .download-video{
@@ -348,11 +348,17 @@ img {
     height: 150px;
     padding-bottom: 3rem;
   }
+
+  .download-btns{
+    width: 51%;
+    margin-left: 25%;
+  }
 }
 
 /* Download page */
 .d-title {
   text-align: center;
+  margin-left: -4rem;
 }
 
 .d-title h1 {
