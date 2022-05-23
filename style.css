@@ -337,8 +337,8 @@ img {
   /* Download Page */
 
   .download-body-tag{
-    margin-left: 80px;
-    margin-right: -80px;
+    margin-left: 60px;
+    margin-right: -100px;
   }
 
   .download-video{
