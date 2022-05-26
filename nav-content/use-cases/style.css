@@ -201,11 +201,6 @@ img {
 
 @media (max-width: 700px) {
 
-  .pop {
-    padding: 1;
-    font-size: smaller;
-    height: 60%;
-  }
 }
 
 @media (max-width: 414px) {
@@ -229,12 +224,6 @@ img {
 
   #textTitle h1 {
     font-size: 150%;
-  }
-
-  .pop {
-    padding: 1.3rem 1.3rem 1.3rem;
-    font-size: smaller;
-    height: 100%;
   }
 
 
