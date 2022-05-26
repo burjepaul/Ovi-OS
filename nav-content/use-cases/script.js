@@ -47,7 +47,7 @@ const showCase1 = () => {
   case2Display.classList.add('hidden')
   case3Display.classList.add('hidden')
   empty.classList.add('hidden')
-  window.scrollTo(0, 500)
+  window.scrollTo(0, 1500)
 }
 
 const showCase2 = () => {
@@ -55,6 +55,7 @@ const showCase2 = () => {
   case1Display.classList.add('hidden')
   case3Display.classList.add('hidden')
   empty.classList.add('hidden')
+  window.scrollTo(0, 1000)
 }
 
 const showCase3 = () => {
@@ -62,6 +63,7 @@ const showCase3 = () => {
   case2Display.classList.add('hidden')
   case1Display.classList.add('hidden')
   empty.classList.add('hidden')
+  window.scrollTo(0, 500)
 }
 const cl = () => console.log(1)
 
