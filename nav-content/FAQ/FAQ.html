@@ -123,12 +123,12 @@
               </div>
             </li>
             <li class="navbar-item">
-              <a class="nav-link" href=""
+              <a class="nav-link" href="https://www.ovios.org/use-cases"
                 >Use Cases</a
               >
             </li>
             <li class="navbar-item">
-              <a class="nav-link" href="nav-content/FAQ/FAQ.html"
+              <a class="nav-link" href="https://www.ovios.org/faqs-features"
                 >FAQ & Features</a
               >
             </li>
@@ -149,79 +149,169 @@
 
     <!-- Title section -->
     <div class="d-title">
-      <h1>Use Cases</h1>
-      <h2>Discover the most common use cases for OviOS.</h2>
+      <h1>FAQs & Features</h1>
     </div>
 
-    <!-- Use case - cases -->
+    <!-- FAQ's containers -->
+    <div class="page-container">
+      <div class="FAQ-container">
+        <p class="questions number-1">1. What is a storage OS?</p>
+        <p class="questions number-2">2. What OviOS is and isn’t?</p>
+        <p class="questions number-3">3. What is a LUN?</p>
+        <p class="questions number-4">
+          4. What is thin and thick provisioning?
+        </p>
+        <p class="questions number-5">5. What is an iSCSI target?</p>
+        <p class="questions number-6">6. What is a volume?</p>
+        <p class="questions number-7">7. What is NFS and SMB?</p>
+        <p class="questions number-8">
+          8. Does OviOS support remote authentication?
+        </p>
+        <p class="questions number-9">9. What are snapshots?</p>
+        <p class="questions number-10">
+          10. What operating systems does OviOS Linux support?
+        </p>
+      </div>
+      <div class="answer-container">
+        <div class="answer-1 hidden">
+          <p>
+            A storage OS is an operating system for servers that is designed and
+            built around data availability, high-performance and stability.
+          </p>
+          <p>
+            Depending on it’s features, it will include storage protocols such
+            as NFS, SMB, iSCSI and FC. OviOS Linux uses iSCSI, NFS and SMB by
+            default. FC and FCoE can be manually configured, by adding the
+            necessary drivers and modules.
+          </p>
+          <p>
+            Usually storage OSs aren’t concerned with graphics and audio drivers
+            or others not needed for it’s purpose. OviOS does not include any of
+            those.
+          </p>
+        </div>
 
-    <section class="observer-section">
-      <div class="row cards">
-        <div class="col-md-4 mt-5 download-btns case-1">
-          <div class="pop">
-            <div class="bubble">
-              <div class="inner">
-                <img
-                  src="Images/number-one-bold-svgrepo-com.svg"
-                  alt="google-drive"
-                  width="50px"
-                  height="50px"
-                />
-              </div>
-            </div>
-            <h4>Single Node OviOS Linux with replication</h4>
-          </div>
+        <div class="answer-2 hidden">
+          <p>
+            OviOS is a highly performant storage OS which can be used to provide
+            storage to different clients via iSCSI, NFS, SMB and FTP.
+          </p>
+          <p>
+            OviOS is not suitable for desktops, laptops, media servers. It
+            doesn’t provide online repositories, however packages can be
+            upgraded manually non-disruptively.
+          </p>
         </div>
-        <div class="col-md-4 mt-5 download-btns case-2">
-          <div href="" class="pop">
-            <div class="bubble">
-              <div class="inner">
-                <img
-                  src="Images/number-two-bold-svgrepo-com.svg"
-                  alt="google-drive"
-                  width="50px"
-                  height="50px"
-                />
-              </div>
-            </div>
-            <h4>Node HA Cluster with OviOS Linux</h4>
-          </div>
-        </div>
-        <div class="col-md-4 mt-5 download-btns case-3">
-          <div href="" class="pop">
-            <div class="bubble">
-              <div class="inner">
-                <img
-                  src="Images/number-three-bold-svgrepo-com.svg"
-                  alt="google-drive"
-                  width="50px"
-                  height="50px"
-                />
-              </div>
-            </div>
-            <h4>Node HA Cluster with OviOS Linux</h4>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Display cases -->
-    <section id="display-cases">
-      <div class="empty-div"></div>
-      <div class="cases case-1-display hidden">
-        <h2>Single Node OviOS Linux with replication</h2>
-        <img src="Images/case1.png" alt="" />
+        <div class="answer-3 hidden">
+          <p>
+            A Logical Unit Number is a number that identifies a block device
+            created on the storage system.
+          </p>
+          <p>
+            Using SCSI commands via TCP/IP networks, clients can connect to
+            OviOS LUNs and use them as regular disks. OviOS LUNs can be thin or
+            thick provisioned.
+          </p>
+        </div>
+
+        <div class="answer-4 hidden">
+          <p>
+            When the admin creates a thin LUN, the size assigned to the new LUN
+            is not reserved in the storage pool, as opposed to thick LUNs which
+            reserve the space in the pool when created.
+          </p>
+          <p>
+            With thin LUNs, when the usage on the LUNs at client level changes
+            due to data being deleted, the storage system can reflect this
+            change if the client initiates UNMAP commands to tell the storage OS
+            about the change. This way the admin can over provision the storage
+            pool, but there must be measures taken to ensure there is always
+            enough space on the pool.
+          </p>
+          <p>
+            Although the OviOS commands have implemented thin and thick
+            provisioning, the functionality is not yet implemented at filesystem
+            level. ZFS on Linux doesn’t provide yet UNMAP support. LUNs can
+            still be created and used as thin, but the OS will not know when
+            data is deleted inside the LUN.
+          </p>
+          <p>
+            OviOS recommends to create only thick LUNs until UNMAP will be
+            supported.
+          </p>
+        </div>
+
+        <div class="answer-5 hidden">
+          <p>
+            In OviOS Linux an iSCSI target is a controller located on the iSCSI
+            server. The target can be accessed by iSCSI initiators to access the
+            LUNs. In OviOS you can create multiple targets, control which
+            initiators can access them, map multiple LUNs to each target.
+          </p>
+        </div>
+
+        <div class="answer-6 hidden">
+          <p>
+            In OviOS Linux a volume is a filesystem that acts as a directory in
+            the storage pool. The volume can be shared to Windows clients as a
+            Network Drive via the SMB protocol, or to Linux and UNIX clients as
+            an NFS share.
+          </p>
+          <p>
+            When creating a volume, the admin can assign a volume size, which
+            reserves the space on the pool.
+          </p>
+        </div>
+
+        <div class="answer-7 hidden">
+          <p>
+            NFS (Network File System) and SMB (Server Message Block) are
+            protocols used to share storage volumes to different clients. NFS is
+            used with UNIX like systems, while SMB is used with Windows clients.
+            OviOS has support for both protocols by default.
+          </p>
+        </div>
+
+        <div class="answer-8 hidden">
+          <p>
+            Yes. OviOS supports Active Directory authentication for SMB clients,
+            by joining the system to a windows Domain Controller. OviOS shell
+            provides a tool for this purpose, called smbovios
+          </p>
+          <p>
+            OviOS also supports NIS authentication, by using the NIS client
+            feature.
+          </p>
+        </div>
+
+        <div class="answer-9 hidden">
+          <p>
+            OviOS supports copy-in-time snapshots for volumes, LUNs and pools. A
+            snapshot can be taken manually at any time or scheduled, without any
+            impact on data access or performance.
+          </p>
+          <p>One can restore volumes , LUNs or entire pools from snapshots.</p>
+          <p>
+            The admin can also use the replication feature and replicate pools,
+            volumes or LUNs to a secondary OviOS storage system, for disaster
+            recovery scenarios.
+          </p>
+        </div>
+
+        <div class="answer-10 hidden">
+          <p>
+            <strong>
+              OviOS has been tested and supports the following client operating
+              systems:</strong
+            >
+          </p>
+          <p><strong>With iSCSI:</strong>  ESXi 4.x, 5.x and 6.x ; Windows 2007, 8, 2008, 2012 ; Linux ; the BSD family ; Solaris 11 and the Illumos Family</p>
+          <p><strong>10.2. With NFS:</strong>  ESXi 4.x, 5.x and 6.x ; Linux ; the BSD family ; Solaris 11 and the Illumos Family, Windows NFS client</p>
+          <p><strong>10.3. With SMB v1, v2 and v3: </strong>   Windows 2007, 8, 2008, 2012, Windows 10 ; Linux ; Chrome OS. </p>
+        </div>
       </div>
-      <div class="cases case-2-display hidden">
-        <h2>Node HA Cluster with OviOS Linux</h2>
-        <img src="Images/case2.png" alt="" />
-      </div>
-      <div class="cases case-3-display hidden">
-        <h2>Node HA Cluster with OviOS Linux</h2>
-        <img src="Images/case3.png" alt="" />
-      </div>
-    </section>
-    <br />
+    </div>
 
     <footer>
       <div class="row div-container">
