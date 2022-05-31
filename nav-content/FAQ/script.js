@@ -11,6 +11,7 @@ const display = function(number){
   }
   answerElements[number].classList.remove('hidden')
   questionsElements[number].classList.add('hover-question')
+  if(window.innerWidth < 767) window.scrollTo(0, 600)
 }
 
 const displayFeature = function(number){
@@ -20,6 +21,7 @@ const displayFeature = function(number){
   }
   answerFeaturesElement[number].classList.remove('hidden')
   featureElements[number].classList.add('hover-question')
+  if(window.innerWidth < 767) window.scrollTo(0, 1200)
 }
 
 for (let i = 1; i < 11; i++) {
