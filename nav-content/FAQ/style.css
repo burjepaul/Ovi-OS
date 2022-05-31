@@ -45,6 +45,10 @@ footer {
   color: white;
 }
 
+.titles{
+  padding-bottom: 1rem;
+}
+
 .title-section {
   padding-top: 4%;
 }
@@ -54,7 +58,7 @@ footer {
 }
 
 /* FAQ */
-.page-container{
+.page-container, .feature-container{
   display: flex;
 }
 
@@ -62,7 +66,7 @@ footer {
   margin-left: 10%;
 }
 
-.questions {
+.questions, .feature {
   color: #fff;
   background-clip: padding-box;
   width: 450px;
@@ -86,73 +90,20 @@ footer {
   transition: transform 0.3s ease-out;
 }
 
-.questions:hover{
+.questions:hover, .feature:hover{
   transform: translate(0, -5px);
-  background-color: rgba(255, 252, 252, 0.085);
+  background-color: rgba(255, 252, 252, 0.15);
 }
 
-.answer-container{
+.hover-question{
+  background-color: rgba(255, 252, 252, 0.15);
+}
+
+.answer-container, .feature-answer-container{
   margin-left: 10%;
   margin-right: 10%;
   max-width: 1000px;
   color: #fff;
-}
-
-/* Cards */
-
-.cards {
-  margin: 2% 10%;
-}
-
-.pop {
-  display: block;
-  position: relative;
-  border-radius: 15px;
-  max-width: 700px;
-  background: rgb(46, 8, 107);
-  box-shadow: 0 1rem 2rem 0 rgba(201, 204, 212, 0.2);
-  padding: 4.3rem 2.8rem 4.5rem;
-  text-align: center;
-  height: 100%;
-  color: white;
-}
-
-a.pop {
-  cursor: pointer;
-}
-
-img {
-  vertical-align: middle;
-  border-style: none;
-}
-
-.bubble {
-  height: 5rem;
-  line-height: 5rem;
-  width: 5rem;
-  border-radius: 2.5rem;
-  background: #fff;
-  box-shadow: 0 0.4rem 0.8rem 0 rgba(4, 126, 220, 0.767);
-  text-align: center;
-}
-
-.bubble img {
-  display: inline;
-}
-
-.bubble .inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 2.5rem;
-}
-
-.pop .bubble {
-  position: absolute;
-  left: 50%;
-  margin-left: -2.5rem;
-  top: -2.5rem;
-  z-index: 9;
 }
 
 .text {
@@ -203,11 +154,24 @@ img {
   h1 {
     padding-top: 0%;
   }
+
+  .questions, .feature {
+    width: 300px;
+  }
 }
 
 @media (max-width: 767px) {
   .sign {
     display: none;
+  }
+
+  .page-container, .feature-container{
+    display: block;
+  }
+
+
+  .questions, .feature {
+    width: 450px;
   }
 }
 
@@ -235,6 +199,14 @@ img {
 
   #textTitle h1 {
     font-size: 150%;
+  }
+
+  .page-container, .feature-container{
+    display: block;
+  }
+
+  .questions, .feature {
+    width: 200px;
   }
 
   /* Download Page */

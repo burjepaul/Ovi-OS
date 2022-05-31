@@ -153,6 +153,7 @@
     </div>
 
     <!-- FAQ's containers -->
+    <h2 class="titles">FAQs:</h2>
     <div class="page-container">
       <div class="FAQ-container">
         <p class="questions number-1">1. What is a storage OS?</p>
@@ -306,12 +307,128 @@
               systems:</strong
             >
           </p>
-          <p><strong>With iSCSI:</strong>  ESXi 4.x, 5.x and 6.x ; Windows 2007, 8, 2008, 2012 ; Linux ; the BSD family ; Solaris 11 and the Illumos Family</p>
-          <p><strong>10.2. With NFS:</strong>  ESXi 4.x, 5.x and 6.x ; Linux ; the BSD family ; Solaris 11 and the Illumos Family, Windows NFS client</p>
-          <p><strong>10.3. With SMB v1, v2 and v3: </strong>   Windows 2007, 8, 2008, 2012, Windows 10 ; Linux ; Chrome OS. </p>
+          <p>
+            <strong>With iSCSI:</strong> ESXi 4.x, 5.x and 6.x ; Windows 2007,
+            8, 2008, 2012 ; Linux ; the BSD family ; Solaris 11 and the Illumos
+            Family
+          </p>
+          <p>
+            <strong>10.2. With NFS:</strong> ESXi 4.x, 5.x and 6.x ; Linux ; the
+            BSD family ; Solaris 11 and the Illumos Family, Windows NFS client
+          </p>
+          <p>
+            <strong>10.3. With SMB v1, v2 and v3: </strong> Windows 2007, 8,
+            2008, 2012, Windows 10 ; Linux ; Chrome OS.
+          </p>
         </div>
       </div>
     </div>
+    <br />
+    <h2 class="'titles">Main features:</h2>
+    <div class="feature-container">
+      <div class="FAQ-container">
+        <p class="feature feature-number-1">1. HA Clustering</p>
+        <p class="feature feature-number-2">2. Replication</p>
+        <p class="feature feature-number-3">3. Snapshots</p>
+        <p class="feature feature-number-4">4. ZFS Storage File System</p>
+        <p class="feature feature-number-5">5. Virtualization.</p>
+        <p class="feature feature-number-6">
+          6. Run from a USB, or run it as a live System
+        </p>
+        <p class="feature feature-number-7">
+          7. iSCSI, NFS and SMB server features by default
+        </p>
+        <p class="feature feature-number-8">8. Software RAID</p>
+        <p class="feature feature-number-9">9. Data compression</p>
+      </div>
+      <div class="feature-answer-container">
+        <div class="feature-answer-1 hidden">
+          <p>
+            OviOS can be configured as an HA cluster using 2 or 3 OviOS nodes, with corosync and pacemaker.
+          </p>
+          <p>
+            For automatic failover and scsi fencing, the required setup is 3 nodes.
+          </p>
+        </div>
+
+        <div class="feature-answer-2 hidden">
+          <p>
+            Install a second OviOS Linux server and set up replication from the production server to the backup server.
+          </p>
+          <p>
+            Your data will be available at all times on the backup server for disaster recovery scenarios.
+          </p>
+        </div>
+
+        <div class="feature-answer-3 hidden">
+          <p>
+            The ability to snapshot LUNs, volumes and / or pools without disrupting data traffic. Snapshots can be scheduled or taken manually, In case of accidental data deletion, a volume or LUN can be reverted to a last known good snapshot.
+          </p>
+        </div>
+
+        <div class="feature-answer-4 hidden">
+          <p>
+            OviOS uses the ZFS file system for it's storage pools.
+          </p>
+          <p>
+            The ZFS storage filesystem is the most advanced and performant filesystem available today for storage systems. Together with snapshots, LUNs, Volumes, its complex RAID level and many more features there is virtually little that cannot be achieved with ZFS.
+          </p>
+          <p>
+            OviOS Linux provides all these features. Contact us for professional services to find out how we can help.
+          </p>
+        </div>
+
+        <div class="feature-answer-5 hidden">
+          <p>
+            OviOS Linux can be virtualized or installed on physical hardware.
+          </p>
+        </div>
+
+        <div class="feature-answer-6 hidden">
+          <p>
+            OviOS Linux can be installed on a USB drive, or can be run from the live medium. OviOS will create a temporary writable filesystem in the system's RAM and thus can run and serve data without being installed. Read the OviOS live Guide to see how you can save your settings even after a reboot in the live system.
+          </p>
+        </div>
+
+        <div class="feature-answer-7 hidden">
+          <p>
+            Once installed the system can be immediately used as an iSCSI, NFS and SMB server.
+          </p>
+          <p>
+            The default configuration has been tested and optimized to achieve best performance with VMWare, Linux and Windows clients for iSCSI, VMWare and Linux as NFS clients and Windows as SMB clients.
+          </p>
+          <p>
+            OviOS supports SMB protocol versions 1 (also known as NT1 or CIFS) ,SMBv2 and SMBv3.
+          </p>
+        </div>
+
+        <div class="feature-answer-8 hidden">
+          <p>
+            <strong>RAID0</strong> or stripped pools. This configuration provides no data protection in case of a drive failure, it does provide checksumming to prevent silent data corruption.
+          </p>
+          <p>
+            <strong>RAID1</strong> or mirrored pools. Create storage pools using mirrors of disks. It can protect against a large amount of failed drives, but has impact on the storage capacity.
+          </p>
+          <p>
+            <strong>RAID10</strong> or stripped mirrored storage pools. Creates pairs of stripped mirrors which provide the best random read writes performances but reduces the available storage capacity by 50%.
+          </p>
+          <p>
+            <strong>RAID5</strong> uses dynamic stripe width, which gives better performance then traditional RAID5 configurations. Allows for one disk failure.
+          </p>
+          <p>
+            <strong>RAID6</strong> same as RAID5 but allows for 2 disk failures without data loss. Or RAID6+ which allows for 3 disk failures without data loss.
+          </p>
+        </div>
+        <div class="feature-answer-9 hidden">
+          <p>
+            Data compression which saves space on compressible data and improves performance.
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <br/>
+    <br/>
 
     <footer>
       <div class="row div-container">
