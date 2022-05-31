@@ -205,10 +205,6 @@ footer {
     display: block;
   }
 
-  .questions, .feature {
-    width: 200px;
-  }
-
   /* Download Page */
 
   .download-body-tag {
