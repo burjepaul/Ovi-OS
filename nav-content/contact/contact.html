@@ -31,7 +31,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-      <div class="download-body-tag">
     <!-- Nav Bar -->
     <section class="navigation-section" id="nav-Section">
       <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark py-0">
@@ -61,11 +60,7 @@
               <a href="../../index.html" class="nav-link">Home</a>
             </li>
             <li class="navbar-item">
-              <a
-                href=""
-                class="nav-link"
-                >Download</a
-              >
+              <a href="../download/download.html" class="nav-link">Download</a>
             </li>
             <li class="navbar-item">
               <div class="dropdown">
@@ -133,12 +128,10 @@
               >
             </li>
             <li class="navbar-item">
-              <a class="nav-link" href="../FAQ/FAQ.html"
-                >FAQ & Features</a
-              >
+              <a class="nav-link" href="">FAQ & Features</a>
             </li>
             <li class="navbar-item">
-              <a class="nav-link" href="../contact/contact.html"
+              <a class="nav-link" href="https://www.ovios.org/contact"
                 >Contact</a
               >
             </li>
@@ -154,81 +147,76 @@
 
     <!-- Title section -->
     <div class="d-title">
-      <h1>Download OviOS Linux</h1>
-      <h2>Download the latest release of OviOS Linux Storage OS</h2>
+      <h1>Contact us</h1>
     </div>
 
-    <!-- Download buttons -->
-    <section class="observer-section">
-        <div class="row cards">
-          <div class="col-md-4 mt-5 download-btns">
-            <a href="https://drive.google.com/drive/folders/0BzTEYP12qoJ2fmx0ZHJ1bFFkS3F4UEk0Z2l3Y1RjcFI5eDM4ekxVMGg3dldVOG5OVmV1MDg?usp=sharing" target="_blank">
-                <div href="" class="pop">
-                <div class="bubble">
-                    <div class="inner">
-                    <img src="Images/google-drive-brands.svg" alt="google-drive" width="50px" height="50px"/>
-                    </div>
-                </div>
-                <h4>Download from Google Drive</h4>
-                </div>
-            </a>
-          </div>
-          <div class="col-md-4 mt-5 download-btns">
-            <a href="https://sourceforge.net/projects/ovios/files/latest/download?source=files" target="_blank">
-                <div href="" class="pop">
-                <div class="bubble">
-                    <div class="inner">
-                        <img src="Images/fire-solid.svg" alt="fire" width="50px" height="50px"/>
-                    </div>
-                </div>
-                <h4>Download from Sourceforge</h4>
-                </div>
-            </a>
-          </div>
-          <div class="col-md-4 mt-5 download-btns">
-            <a href="" target="_blank">
-                <div href="" class="pop">
-                <div class="bubble">
-                    <div class="inner">
-                        <img src="Images/envelope-solid.svg" alt="envelope" width="50px" height="50px"/>
-                    </div>
-                </div>
-                <h4>Email us for details</h4>
-                </div>
-            </a>
-          </div>
-    </div>
-    </section>
-
-    <div class="plain-text">
-        <p>
-          &nbsp&nbsp&nbsp&nbspAs a software defined storage operating system, OviOS Linux can be installed on commodity hardware, with support for x86_64 CPUs.
-        </p>
-        <p>
-          &nbsp&nbsp&nbsp&nbspWe recommend a minimum of 4GB of RAM for a small server, with no high performance requirements. The OS itself requires about 100MB memory to run, but for storage services, the more the better.
-        </p>
-        <p>
-            &nbsp&nbsp&nbsp&nbspIt can be installed on a small SSD or HDD (recommended size 8GB).
-          </p>
-          <p>
-            &nbsp&nbsp&nbsp&nbspOnce booted into the live CD , type setup to start the installer. The installation process is very simple, one needs to set the time, choose the device on which to install, and run the installer.
-          </p>
+    <!-- Buutons Section -->
+    <div class="page-container">
+      <div class="buttons-container">
+        <form action="https://w3docs.com" method="get" target="_blank">
+          <button class="button-indv">Email OviOs</button>
+        </form>
+        <form
+          action="https://groups.google.com/a/ovios.org/g/ovios-linux"
+          method="get"
+          target="_blank"
+        >
+          <button class="button-indv">OviOS Forum</button>
+        </form>
+        <form action="https://blog.ovios.org/" method="get" target="_blank">
+          <button class="button-indv">Technical blog</button>
+        </form>
+        <form
+          action="https://twitter.com/ovioslinux"
+          method="get"
+          target="_blank"
+        >
+          <button class="button-indv">OviOS on Twitter</button>
+        </form>
+        <form
+          action="https://www.youtube.com/c/oviosorgstorage/videos"
+          method="get"
+          target="_blank"
+        >
+          <button class="button-indv">OviOS on YouTube</button>
+        </form>
       </div>
-
-      <div class="download-video-container">
-      <div class="tutorial-text">
-        <h4>Check out the Installation video tutorial:</h4>
+      <!-- Email host -->
+      <div class="email-container">
+        <form action="mail.php" method="post">
+          <div class="input-wrapper">
+            <label for="name">Your Name:&nbsp</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your name"
+              size="40"
+            />
+          </div>
+          <div class="input-wrapper">
+            <label for="name">Your email:&nbsp&nbsp</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your_email@address.com"
+              size="40"
+            />
+          </div>
+          <div class="input-wrapper">
+            <textarea
+              name="message"
+              id="message"
+              cols="100"
+              rows="5"
+              placeholder="Let us know what do you think"
+            ></textarea>
+          </div>
+            <input type="submit" value="Send Email" class="button-indv"/>
+        </form>
       </div>
-      <iframe
-        class="download-video"
-        sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-modals"
-        frameborder="0"
-        aria-label="YouTube Video, OviOS Linux 1.20 Installation tutorial"
-        src="https://www.youtube.com/embed/6rMUepDBC2Q"
-        allowfullscreen=""
-      ></iframe>
     </div>
-
     <footer>
       <div class="row div-container">
         <div class="col-md-3 div-footer sign">
@@ -302,7 +290,6 @@
         <p class="copyright-text">Copyright © 2012-2022 OviOS Linux</p>
       </div>
     </footer>
-      </div>
     <!-- Script -->
     <script src="script.js"></script>
   </body>

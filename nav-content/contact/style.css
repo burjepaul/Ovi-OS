@@ -1,0 +1,182 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li a {
+  cursor: pointer;
+}
+
+h1 {
+  padding-top: 10%;
+  padding-left: 10%;
+  color: white;
+  font-size: 4rem;
+  line-height: 1.5;
+  font-family: "Open Sans", "Poppins", sans-serif;
+  text-align: center;
+}
+
+h2 {
+  padding-left: 10%;
+  color: white;
+  font-size: 2rem;
+  line-height: 1.5;
+  font-family: "Open Sans", "Poppins", sans-serif;
+}
+
+footer {
+  background: rgb(46, 8, 107);
+  color: white;
+}
+
+label {
+  color: white;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons-container {
+  margin: 3rem;
+}
+
+.email-container {
+  padding: 3rem;
+}
+
+.input-wrapper {
+  margin: 1rem;
+}
+
+.button-indv {
+  margin: 1rem;
+  width: 170px;
+  padding: 0.6rem;
+  border-radius: 0.35rem;
+  background-color: rgb(46, 8, 107);
+  color: white;
+  font-weight: bold;
+  transition: transform 0.3s ease-out;
+}
+
+.button-indv:hover {
+  background-color: rgb(46, 8, 107);
+  color: white;
+  box-shadow: 0.2rem 0.2rem 0.8rem 0.2rem rgba(4, 126, 220, 0.467);
+  transform: translate(0, -5px);
+}
+
+.titles {
+  padding-bottom: 1rem;
+}
+
+.title-section {
+  padding-top: 4%;
+}
+
+.hidden {
+  display: none;
+}
+
+.div-container {
+  display: flex;
+  padding: 5rem;
+  text-align: center;
+}
+
+.div-footer {
+  position: relative;
+  justify-content: center;
+}
+
+.social-media-logos {
+  text-align: center;
+  font-size: 3rem;
+  padding: 2rem;
+}
+
+.fa-twitter:hover {
+  cursor: pointer;
+  color: #00acee;
+}
+
+.fa-youtube:hover {
+  cursor: pointer;
+  color: #ff0000;
+}
+
+.copyright-text {
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1220px) {
+  .page-container {
+    display: flex;
+    justify-content: start;
+  }
+
+  textarea{
+    width: 500px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sign {
+    display: none;
+  }
+  .page-container {
+    display: block;
+  }
+
+  .buttons-container{
+    justify-content: center;
+    margin-left: 15rem;
+  }
+}
+
+@media (max-width: 700px) {
+}
+
+@media (max-width: 414px) {
+  body {
+    margin-left: 0px;
+    margin-right: -260px;
+    font-size: larger;
+  }
+
+  .navbar {
+    max-width: 100%;
+  }
+
+  .navbar-logo {
+    width: 45px;
+  }
+
+  .navbar-brand {
+    width: 45px;
+  }
+
+  #textTitle h1 {
+    font-size: 150%;
+  }
+
+  .page-container,
+  .feature-container {
+    display: block;
+  }
+}
