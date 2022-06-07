@@ -87,8 +87,13 @@ footer {
 .card{
   background-color: black;
   color: white;
+  margin-bottom: 2rem;
 }
 
+.card-img-top{
+  width: 350px;
+
+}
 
 .div-footer {
   position: relative;
