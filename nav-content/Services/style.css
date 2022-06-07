@@ -57,6 +57,7 @@ footer {
 .buttons-container{
   display: flex;
   justify-content:center;
+  margin-left: 10rem;
 }
 
 .button-indv {
@@ -144,6 +145,10 @@ footer {
 @media (max-width: 767px) {
   .sign {
     display: none;
+  }
+
+  .buttons-container{
+    margin-left: 1rem;
   }
 }
 
