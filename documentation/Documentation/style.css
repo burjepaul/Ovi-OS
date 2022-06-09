@@ -1,0 +1,180 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+h1 {
+  padding-left: 10%;
+  color: white;
+  font-size: 4rem;
+  line-height: 1.5;
+  font-family: "Open Sans", "Poppins", sans-serif;
+  text-align: center;
+}
+
+h2 {
+  padding-left: 10%;
+  color: white;
+  font-size: 2rem;
+  line-height: 1.5;
+  font-family: "Open Sans", "Poppins", sans-serif;
+}
+
+footer {
+  background: rgb(46, 8, 107);
+  color: white;
+}
+
+.title {
+  padding-top: 150px;
+  padding-bottom: 3%;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+}
+
+.mini-titles a {
+  display: block;
+  text-decoration: underline;
+  margin-left: 10%;
+  margin-bottom: 5px;
+  width: 250px;
+  font-size: larger;
+}
+
+.documentation-buttons button {
+  display: block;
+  margin-left: 10%;
+  margin-bottom: 1rem;
+  width: 280px;
+  padding: 0.6rem;
+  border-radius: 0.35rem;
+  background-color: rgb(46, 8, 107);
+  color: white;
+  font-weight: bold;
+  transition: transform 0.3s ease-out;
+}
+
+.documentation-buttons button:hover {
+  background-color: rgb(46, 8, 107);
+  color: white;
+  box-shadow: 0.2rem 0.2rem 0.8rem 0.2rem rgba(4, 126, 220, 0.467);
+  transform: translate(0, -5px);
+}
+
+.plain-text {
+  color: #fff;
+  margin: 3rem 15rem 3rem;
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: rgba(34, 36, 39, 0.452);
+  box-shadow: 0 1.3125rem 1.625rem 0 rgba(4, 126, 220, 0.171);
+}
+
+.old-type {
+  background-clip: padding-box;
+  width: 500px;
+  background-color: rgba(255, 252, 252, 0.068);
+  border-bottom: 0.75pt solid rgba(255, 255, 255, 0.122);
+  border-left: 0.75pt solid rgba(255, 255, 255, 0.122);
+  border-right: 0.75pt solid rgba(255, 255, 255, 0.122);
+  border-top: 0.75pt solid rgba(255, 255, 255, 0.122);
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-bottom: 4pt;
+  padding-left: 4pt;
+  padding-right: 4pt;
+  padding-top: 4pt;
+  text-align: left;
+  font-family: Source Code Pro; font-weight: normal
+}
+
+.div-container {
+  display: flex;
+  padding: 5rem;
+  text-align: center;
+}
+
+.div-footer {
+  position: relative;
+  justify-content: center;
+}
+
+.social-media-logos {
+  text-align: center;
+  font-size: 3rem;
+  padding: 2rem;
+}
+
+.fa-twitter:hover {
+  cursor: pointer;
+  color: #00acee;
+}
+
+.fa-youtube:hover {
+  cursor: pointer;
+  color: #ff0000;
+}
+
+.copyright-text {
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1220px) {
+  .plain-text {
+    margin: 1rem 3rem 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .sign {
+    display: none;
+  }
+  .buttons-container {
+    display: block;
+  }
+  .documentation-buttons {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 700px) {
+}
+
+@media (max-width: 414px) {
+  body {
+    margin-left: 0px;
+    margin-right: -260px;
+    font-size: larger;
+  }
+
+  .navbar {
+    max-width: 100%;
+  }
+
+  .navbar-logo {
+    width: 45px;
+  }
+
+  .navbar-brand {
+    width: 45px;
+  }
+
+  #textTitle h1 {
+    font-size: 150%;
+  }
+}
