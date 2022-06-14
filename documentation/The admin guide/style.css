@@ -150,9 +150,6 @@ footer {
   .documentation-buttons {
     margin-top: 50px;
   }
-  .old-type {
-    width: 450px;
-  }
 }
 
 @media (max-width: 700px) {
