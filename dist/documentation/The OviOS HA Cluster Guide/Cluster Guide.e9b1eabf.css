@@ -1,0 +1,281 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #000;
+  margin: 0;
+}
+
+.features a, a {
+  color: #fff;
+  text-decoration: none;
+}
+
+li a {
+  cursor: pointer;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  padding-top: 10%;
+  padding-left: 10%;
+  font-family: Open Sans, Poppins, sans-serif;
+  font-size: 4rem;
+  line-height: 1.5;
+}
+
+h2 {
+  color: #fff;
+  padding-left: 10%;
+  font-family: Open Sans, Poppins, sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+footer {
+  color: #fff;
+  background: #2e086b;
+}
+
+.title-section {
+  padding-top: 4%;
+}
+
+.observer-section {
+  transition: transform 1s, opacity 1s;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.text-after-cards h4 {
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.text-description {
+  color: #fff;
+  text-align: start;
+  padding: 5% 15% 10%;
+  font-size: 1rem;
+}
+
+.plain-text {
+  color: #fff;
+  background-color: #22242773;
+  border-radius: 15px;
+  margin: 3rem 15rem;
+  padding: 1rem;
+  box-shadow: 0 1.3125rem 1.625rem #047edc2c;
+}
+
+.old-type {
+  width: 650px;
+  text-align: left;
+  background-color: #fffcfc11;
+  background-clip: padding-box;
+  border: .75pt solid #ffffff1f;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 4pt;
+  font-family: Source Code Pro;
+  font-weight: normal;
+}
+
+.div-container {
+  text-align: center;
+  padding: 5rem;
+  display: flex;
+}
+
+.div-footer {
+  justify-content: center;
+  position: relative;
+}
+
+.social-media-logos {
+  text-align: center;
+  padding: 2rem;
+  font-size: 3rem;
+}
+
+.fa-twitter:hover {
+  cursor: pointer;
+  color: #00acee;
+}
+
+.fa-youtube:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.copyright-text {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: .75rem;
+}
+
+.table, th, td {
+  text-align: center;
+  border: 1px solid #fff;
+}
+
+th, td {
+  padding: 10px;
+}
+
+@media (max-width: 1220px) {
+  video {
+    width: 750px;
+    height: 400px;
+    margin: auto;
+    display: block;
+  }
+
+  h1 {
+    padding-top: 0%;
+  }
+
+  .setup-video {
+    width: 800px;
+    height: 800px;
+    margin-left: -400px;
+    padding-bottom: 3rem;
+  }
+
+  .server-container, .cloud-container {
+    margin-top: 8%;
+  }
+
+  .carousel-inner h2 {
+    margin-left: -350px;
+  }
+
+  .plain-text {
+    margin: 1rem 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .sign {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .setup-video {
+    width: 500px;
+    height: 500px;
+    margin-left: -250px;
+    padding-bottom: 3rem;
+  }
+
+  .carousel-inner h2 {
+    margin-left: -250px;
+  }
+
+  .download-video {
+    width: 300px;
+    height: 300px;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (max-width: 414px) {
+  body {
+    margin-left: 0;
+    margin-right: -260px;
+    font-size: larger;
+  }
+
+  .navbar {
+    max-width: 100%;
+  }
+
+  .navbar-logo, .navbar-brand {
+    width: 45px;
+  }
+
+  video {
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    display: block;
+  }
+
+  #textTitle h1 {
+    font-size: 150%;
+  }
+
+  .setup-video {
+    width: 350px;
+    height: 350px;
+    margin-left: -150px;
+    padding-bottom: 3rem;
+  }
+
+  .carousel-inner h2 {
+    margin-left: -150px;
+  }
+
+  .download-body-tag {
+    margin-left: 10px;
+    margin-right: -170px;
+    font-size: larger;
+  }
+
+  .download-video {
+    width: 200px;
+    height: 150px;
+    padding-bottom: 3rem;
+  }
+
+  .download-btns {
+    width: 51%;
+    margin-left: 25%;
+  }
+}
+
+.d-title {
+  text-align: center;
+  margin-left: -4rem;
+}
+
+.d-title h1 {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+}
+
+.d-title h2 {
+  padding-bottom: 3rem;
+}
+
+.download-btns {
+  padding-bottom: 3rem;
+  transition: transform .3s ease-out;
+}
+
+.download-btns:hover {
+  cursor: pointer;
+  transform: translate(0, -10px);
+}
+
+.download-video-container {
+  text-align: center;
+  color: #fff;
+  padding-top: 3rem;
+}
+
+.download-video {
+  width: 800px;
+  height: 800px;
+  padding-bottom: 3rem;
+}
+
+/*# sourceMappingURL=Cluster Guide.e9b1eabf.css.map */

@@ -1,0 +1,173 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #000;
+  margin: 0;
+}
+
+.features a, a {
+  color: #fff;
+  text-decoration: none;
+}
+
+li a {
+  cursor: pointer;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  padding-top: 10%;
+  padding-left: 10%;
+  font-family: Open Sans, Poppins, sans-serif;
+  font-size: 4rem;
+  line-height: 1.5;
+}
+
+h2 {
+  color: #fff;
+  padding-left: 10%;
+  font-family: Open Sans, Poppins, sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+footer {
+  color: #fff;
+  background: #2e086b;
+}
+
+.title-section {
+  padding-top: 4%;
+}
+
+.observer-section {
+  transition: transform 1s, opacity 1s;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.buttons-container {
+  justify-content: center;
+  margin-left: 10rem;
+  display: flex;
+}
+
+.button-indv {
+  width: 170px;
+  color: #fff;
+  background-color: #2e086b;
+  border-radius: .35rem;
+  margin: 3rem 3rem 6rem;
+  padding: .6rem;
+  font-weight: bold;
+  transition: transform .3s ease-out;
+}
+
+.button-indv:hover {
+  color: #fff;
+  background-color: #2e086b;
+  transform: translate(0, -5px);
+  box-shadow: .2rem .2rem .8rem .2rem #047edc77;
+}
+
+.div-container {
+  text-align: center;
+  padding: 5rem;
+  display: flex;
+}
+
+.card {
+  color: #fff;
+  background-color: #00000083;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: .2rem .2rem .8rem .2rem #047edc77;
+}
+
+.col-md-6 {
+  width: 40%;
+  margin: 2.5%;
+}
+
+.card-img-top {
+  width: 350px;
+}
+
+.div-footer {
+  justify-content: center;
+  position: relative;
+}
+
+.social-media-logos {
+  text-align: center;
+  padding: 2rem;
+  font-size: 3rem;
+}
+
+.fa-twitter:hover {
+  cursor: pointer;
+  color: #00acee;
+}
+
+.fa-youtube:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.copyright-text {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: .75rem;
+}
+
+@media (max-width: 1220px) {
+  video {
+    width: 750px;
+    height: 400px;
+    margin: auto;
+    display: block;
+  }
+
+  h1 {
+    padding-top: 0%;
+  }
+}
+
+@media (max-width: 767px) {
+  .sign {
+    display: none;
+  }
+
+  .buttons-container {
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 414px) {
+  body {
+    margin-left: 0;
+    margin-right: -260px;
+    font-size: small;
+  }
+
+  .navbar {
+    max-width: 100%;
+  }
+
+  .navbar-logo, .navbar-brand {
+    width: 45px;
+  }
+
+  #textTitle h1 {
+    font-size: 150%;
+  }
+}
+
+/*# sourceMappingURL=services.72c32613.css.map */

@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <title>OviOS Linux</title>
+    <link rel="icon" type="image/png" href="/Favicon.bf9a340b.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/documentation/The%20admin%20guide/adminguide.49896acd.css">
+  </head>
+  <body>
+    <div class="download-body-tag">
+      <!-- Nav Bar -->
+      <section class="navigation-section" id="nav-Section">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark py-0">
+          <a href="">
+            <img class="navbar-logo" src="/LogoImage.21dea4b4.png" style="margin-left: 15%" alt="">
+          </a>
+          <a class="navbar-brand" style="margin-left: 1%" href="">Ovi OS Linux</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav ms-auto">
+              <li class="navbar-item">
+                <a href="/index.html" class="nav-link">Home</a>
+              </li>
+              <li class="navbar-item">
+                <a href="/nav-content/download/download.html" class="nav-link">Download</a>
+              </li>
+              <li class="navbar-item">
+                <div class="dropdown">
+                  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                    Documentation
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li>
+                      </li><li>
+                        <a class="dropdown-item" href="/documentation/Documentation/documentation.html">Documentation</a>
+                      </li>
+                      <a class="dropdown-item" href="">The Admin Guide</a>
+                    </ul></div></li>
+                    <li>
+                      <a class="dropdown-item" href="/documentation/System%20backup%20and%20system%20live%20guide/system_backup.html">System backup and system live guide</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/documentation/The%20autosnap%20Guide/autosnap.html">The 'autosnap' Guide</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/documentation/The%20%27bondadm%27%20Guide/bondadm.html">The 'bondadm' Guide</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/documentation/The%20%27options%20Guide/options.html">The 'options' Guide</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/documentation/The%20OviOS%20HA%20Cluster%20Guide/Cluster%20Guide.html">The OviOS HA Cluster Guide</a>
+                    </li>
+                  </ul>
+                </div>
+              
+              <li class="navbar-item">
+                <a class="nav-link" href="/nav-content/use-cases/use-cases.html">Use Cases</a>
+              </li>
+              <li class="navbar-item">
+                <a class="nav-link" href="/nav-content/FAQ/FAQ.html">FAQ & Features</a>
+              </li>
+              <li class="navbar-item">
+                <a class="nav-link" href="/nav-content/contact/contact.html">Contact</a>
+              </li>
+              <li class="navbar-item">
+                <a class="nav-link" href="/nav-content/Services/services.html">Services</a>
+              </li>
+            
+          </nav></section></div>
+        
+      
+
+      <!-- Title section -->
+      <div class="title">
+        <h1>The OviOS Linux Admin Guide</h1>
+      </div>
+
+      <!-- Buttons section -->
+      <section class="buttons-section">
+        <div class="buttons-container">
+          <div class="mini-titles">
+            <a href="#configure-the-network">1. Configure the network</a>
+            <ul>
+              <a href="#bondadm">1.1. bondadm</a>
+              <a href="#netsetup">1.2. netsetup</a>
+            </ul>
+            <a href="#RAID">2. Create RAID sets / storage pools</a>
+            <ul>
+              <a href="#pool">2.1. Create Pools</a>
+              <a href="#AssignSpares">2.2. Assign spares and log devices</a>
+            </ul>
+            <a href="#SetUpSAN">3. Set up SAN (iSCSI)</a>
+            <ul>
+              <a href="#iscsi">3.1. Create iSCSI targets</a>
+              <a href="#luns">3.2. Create LUNs</a>
+            </ul>
+            <a href="#NAS">4. Set up NAS (NFS and / or SMB)</a>
+            <ul>
+              <a href="#NFS">4.1. NFS server</a>
+              <a href="#Export-volumes">4.1.1. Export volumes via NFS</a>
+              <a href="#SMB">4.2. SMB server</a>
+              <a href="#Local-authentication">4.2.1. Local authentication</a>
+              <a href="#Remote-authentication">4.2.2. Remote authentication</a>
+              <a href="#Export-volumes-SMB">4.2.3. Export volumes via SMB</a>
+            </ul>
+            <a href="#replications">5. Set up replication</a>
+            <ul>
+              <a href="#initial-replication">5.1. Initial replication</a>
+              <a href="#incremental-replication">5.2. Incremental replication</a>
+              <a href="#break-replication">5.3. Break replication</a>
+            </ul>
+            <a href="#disaster">6. Disaster recovery (DR)</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="plain-text">
+        <p>
+          &nbsp&nbsp&nbsp&nbspOviOS Linux is a linux based storage OS, with out-of-the-box support for iSCSI, SMB and NFS.
+        </p>
+        <p>
+          &nbsp&nbsp&nbsp&nbspThe ovios-shell is the storage management shell for OviOS Linux. The ovios-shell is designed to assist in setting up the server, and requires very little Linux/UNIX/storage knowledge. Most commands are interactive and if an error occurs, the messages can be found using 'ovilogs', or manually reading the sys.log file.
+        </p>
+        <p>
+          &nbsp&nbsp&nbsp&nbspYou should not create pools, volumes, LUNs and targets using the Linux bash shell. These will not work well in ovios-shell. Objects created and managed with the ovios-shell have specific configurations and specific options set.
+        </p>
+        <p>
+          &nbsp&nbsp&nbsp&nbspThe ovios_restore command can assist in setting the ovios specific options to pools not created with the ovios-shell.
+        </p>
+        <p>
+          &nbsp&nbsp&nbsp&nbspThere are 4 main steps to create a storage server using the ovios-shell, and 2 additional steps for replication and DR.
+        </p>
+      </div>
+
+      <div class="documentation-text">
+        <div class="plain-text" id="configure-the-network">
+          <h2>1. Configure the network</h2>
+          <p>
+            &nbsp&nbsp&nbsp&nbspThere are 3 main issues when configuring the network. IPs, aggregated links, and DNS. OviOS provides two tools for the network:
+          </p>
+          <p>
+            &nbsp&nbsp&nbsp&nbsp'bondadm' to create aggregated links, and 'netsetup' , to set up the network interfaces.
+          </p>
+          <p>
+            &nbsp&nbsp&nbsp&nbspOviOS does not provide an automated method to configure the DNS. 
+          </p>
+          <p>
+            &nbsp&nbsp&nbsp&nbspEdit the resolv.conf file manually if the DNS must be configured.
+          </p> <br><br>
+            <h3 id="bondadm">1.1. bondadm</h3>
+            <p>
+              &nbsp&nbsp&nbsp&nbspThe syntax is:
+            </p>
+            <p class="old-type">
+              &nbsp&nbsp&nbsp&nbspbondadm -n name -i interface1 -i interface2 -m mode
+            </p> <br>
+            <p>
+              You can use 'bondadm' from the ovios-shell, or from the linux shell. (Type 'linuxcmd' to drop to the linuxCLI) <br> <br>
+
+If used from the ovios-shell,  bondadm opens it's own CLI menu. It requires only the arguments. <br> <br>
+
+For example, creating a new bonded interface called bond0, using physical interfaces eth0, eth1 and eth2, and mode 0. <br> <br>
+            </p>
+            <p class="old-type">
+              &nbsp&nbsp&nbsp&nbspovios-shell&gt; bondadm
+            </p> <br>
+            <p>
+              Type only the command arguments, like: -l | -h | -n etc.
+            </p>
+            <p>
+              To exit the bondadm CLI enter q or quit.
+            </p>
+            <p class="old-type">bondadm &gt; -h <br><br>
+
+              The command bondsetup creates a bonded interface using one
+              or more physical interfaces. <br><br>
+          
+              Syntax: bondadm -[l|n|m|i|r|h|v] <br><br>
+          
+              OPTIONS: <br>
+              &nbsp&nbsp&nbsp&nbsp        -l : lists all bonded interfaces and their physical interfaces <br>
+          
+              &nbsp&nbsp&nbsp&nbsp        -n : name of the interface to be created. <br>
+          
+              &nbsp&nbsp&nbsp&nbsp        -m : aggergation mode of the new bond. <br>
+              &nbsp&nbsp&nbsp&nbsp        Possible options are: 0 1 2 3 4 5 6 <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp                        0 = balance-rr (default) <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp                        1 = active-backup <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp                        2 = balance-xor <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp                        3 = broadcast <br>
+
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp                        4 = 802.3ad <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp                        5 = balance-tlb <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp                        6 = balance-alb <br><br>
+          
+              &nbsp&nbsp&nbsp&nbsp        -i : physical interfaces to bond. If more than one, enter <br>
+              &nbsp&nbsp&nbsp&nbsp                 -i multiple times. Ex: -i eth0 -i eth2 <br><br>
+          
+              &nbsp&nbsp&nbsp&nbsp        -r : removes a bonded interface. Requires bond name. <br><br>
+          
+              &nbsp&nbsp&nbsp&nbsp        -h : print usage <br>
+          
+              &nbsp&nbsp&nbsp&nbsp        -v : print version <br><br>
+          
+          Type only the command arguments, like: -l | -h | -n etc. <br>
+          To exit the bondadm CLI enter q or quit. <br><br>
+          
+          bondadm &gt; q
+          ovios-shell&gt;</p> <br>
+          <p>Where: eth0, eth1 and eth2 are physical interfaces.</p>
+          <p>bond0 is the name given to the new aggregated link</p>
+          <p>0 is the mode chosen.</p> <br><br><br>
+          <h3 id="netsetup">1.2. netsetup</h3>
+          <p>Type netsetup in ovios-shell or the linux shell.</p>
+          <p class="old-type">ovios-shell&gt; netsetup  <br>
+            OviOS Linux netsetup utility <br>
+            Select an interface to configure <br>
+            Interface : eth0 <br>
+            Enter interface name to configure: eth0 <br>
+            Selected interface: eth0 <br>
+            Select a service: <br>
+            1. DHCP <br> 
+            2. Static IP <br>
+            Enter 1 or 2: 1  <br>
+            Selected dhcp service.</p>
+            <br>
+            <p>If you choose DHCP, you can also setup MTU size (Jumbo Frames), after which netsetup will configure the interface and run dhcp to acquire an IP.</p>
+            <p>If you choose static service, the tool will ask for an IP, and the following optional values: Gateway, broadcast, subnet, MTU size, Speed and duplex settings, after which it will configure the interface and enable it.</p>
+        </div>
+        <br>
+        <div class="plain-text" id="RAID">
+          <h2>2. Create RAID sets / storage pools</h2>
+          <p>
+            &nbsp&nbsp&nbsp&nbspThere are multiple options available:
+          </p>
+          <p>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp1. Add Raid0 (Stripped devices.) pool
+          </p>
+          <p>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2. Add Raid1 (Mirrored devices. mirror) pool
+          </p>
+          <p>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp3. Add Raid5 (raidz) pool
+          </p>
+          <p>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp4. Add Raid6 (raidz2) pool
+          </p>
+          <p>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp5. Add Raid10 (mirrored stripped) pool
+          </p> <br><br>
+          <h3 id="pool">2.1. Create Pools</h3>
+          <p>Type 'storage' to find available drives:</p>
+          <p>The command storage can display devices by-id, by-path, all or simple</p>
+          <p class="old-type">ovios-shell&gt; storage -h <br>
+            =========================================================== <br>
+            =&nbsp&nbsp&nbsp&nbsp        Your root disk is /dev/sda2 <br>
+            =&nbsp&nbsp&nbsp&nbsp        your boot partition is /dev/sda1 <br>
+            =&nbsp&nbsp&nbsp&nbsp        Do not use /dev/sda2 to create pools <br>
+            =&nbsp&nbsp&nbsp&nbsp        It will destroy your OviOS installation <br>
+            =========================================================== <br>
+            =========================================================== <br>
+            =&nbsp&nbsp&nbsp&nbsp        Use either Path, ID or Dev names to create Pools <br>
+            =========================================================== <br> <br>
+            
+            storage &lt;option&gt; <br>
+            Where option is one of the follwing: simple, all, by-id or by-path <br> <br>
+            
+            ovios-shell&gt; storage by-path <br>
+            =========================================================== <br>
+            =&nbsp&nbsp&nbsp&nbsp        Your root disk is /dev/sda2  and <br>
+            =&nbsp&nbsp&nbsp&nbsp        your boot partition is <br>
+            =&nbsp&nbsp&nbsp&nbsp        Do not use /dev/sda2  to create pools <br>
+            =&nbsp&nbsp&nbsp&nbsp        It will destroy your OviOS installation <br>
+            =========================================================== <br>
+            =========================================================== <br>
+            =&nbsp&nbsp&nbsp&nbsp        Use either Path, ID or Dev names to create Pools <br>
+            =========================================================== <br> <br>
+            
+            +--------+-----------------------------------+----------+--------+ <br>
+            |Dev Name|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ByPath &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbspSize&nbsp&nbsp&nbsp|&nbspSize H&nbsp| <br>
+            +--------+-----------------------------------+----------+--------+ <br>
+            |/dev/sr0|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp None &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|503517184&nbsp|480.19MB| <br>
+            +--------+-----------------------------------+----------+--------+ <br>
+            |/dev/sdc|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp /dev/disk/by-path/ &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|8589934592|&nbsp8.0 GB&nbsp| <br>
+|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp pci-0000:00:10.0-scsi-0:0:1:0 &nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp| <br>
++--------+-----------------------------------+----------+--------+ <br>
+|/dev/sdb|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp None &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|8589934592|&nbsp8.0 GB&nbsp| <br>
++--------+-----------------------------------+----------+--------+ <br>
+|/dev/sda|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp /dev/disk/by-path/ &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|8589934592|&nbsp8.0 GB&nbsp| <br>
+|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp pci-0000:00:10.0-scsi-0:0:0:0 &nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp| <br>
++--------+-----------------------------------+----------+--------+
+            <br><br>
+            ovios-shell&gt; <br>
+            ovios-shell&gt; storage simple <br>
+            =========================================================== <br>
+            =&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        Your root disk is /dev/sda2  and <br>
+            =&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        your boot partition is <br>
+            =&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        Do not use /dev/sda2  to create pools <br>
+            =&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        It will destroy your OviOS installation <br>
+            =========================================================== <br>
+            ===========================================================<br>
+            =&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        Use either Path, ID or Dev names to create Pools <br>
+            =========================================================== <br>
+            
+            +------------+--------------+-------------+ <br>
+            |&nbsp Dev Name &nbsp|&nbsp&nbsp&nbsp&nbsp Size &nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp Size H  &nbsp&nbsp&nbsp| <br>
+            +------------+--------------+-------------+ <br>
+            |/dev/sr0 &nbsp&nbsp&nbsp|&nbsp  503517184  &nbsp |  480.19 MB &nbsp | <br>
+            +------------+--------------+-------------+ <br>
+            |/dev/sdc &nbsp&nbsp&nbsp|&nbsp  8589934592 &nbsp|&nbsp&nbsp   8.0 GB &nbsp&nbsp&nbsp| <br>
+            +------------+--------------+-------------+ <br>
+            |/dev/sdb &nbsp&nbsp&nbsp|&nbsp  8589934592 &nbsp|&nbsp&nbsp   8.0 GB &nbsp&nbsp&nbsp| <br>
+            +------------+--------------+-------------+ <br>
+            |/dev/sda &nbsp&nbsp&nbsp|&nbsp  8589934592 &nbsp|&nbsp&nbsp   8.0 GB &nbsp&nbsp&nbsp| <br>
+            +------------+--------------+-------------+ <br>
+            <br>
+            ovios-shell&gt;
+            </p> <br>
+            <p>Type 'pool create' to create a storage pool.</p>
+            <p class="old-type">ovios-shell&gt; pool create <br>
+              ================================================================= <br>
+              = Create a storage pool for volumes and LUNs <br> <br>
+              
+              = Do not use /dev/sda2 <br>
+              /dev/sdb2  as it will wipe your OviOS installation <br> <br>
+              
+              = Make sure you don't use disks which are part of exported pools either <br>
+              
+              ================================================================== <br>
+              1. Add Raid0 (Stripped devices.) pool <br><br>
+              
+              2. Add Raid1 (Mirrored devices. mirror) pool <br><br>
+              
+              3. Add Raid5 (raidz) pool <br><br>
+              
+              4. Add Raid6 (raidz2) pool <br><br>
+              
+              5. Add Raid10 (mirrored stripped) pool <br><br>
+              
+              Choose a raid level for the new pool (Default:1): <br><br>
+              
+              Enter the name for the new pool: OVIOSPOOL <br><br>
+              
+              Enter devices to add to the pool: /dev/disk/by-id/wwn-0x15272361820407353344x <br>
+              Created pool OVIOSPOOL successfully <br>
+              Enable compression? (Default: yes) [ y|n ] <br>
+              Enabling compression on OVIOSPOOL <br>
+              You can list all storage pools using the 'pool list' command
+              ovios-shell&gt;</p> <br>
+              <p>In this example a storage pool of RAID level 0, called OVIOSPOOL was created using the device  '/dev/disk/by-id/wwn-0x15272361820407353344x' 
+              </p>
+              <p>ovios-shell accepts devices which can be found in /dev/, such as sda, sdc, sdd etc. , or use the full path, such as /dev/disk/by-path/disk1 etc
+              </p>
+              <p>For simplicity, the admin should use only dev names (sdb sdc etc).</p>
+              <p>When the pools are imported during a boot up, the zfs-admin script will import the devices by path.</p>
+              <br><br><br>
+              <h3 id="AssignSpares">2.2. Assign spares and log devices</h3>
+              <p>During pool creation, the admin can specify spare and log devices at the end of the disk list, for EX:</p>
+              <p class="old-type">Enter devices to add to the pool: sdb sdc sdd spare sde sdf log sdm</p>
+              <br>
+              <p>In a mirrored pool (Raid10) you can add spares at the end of the last mirror created, or at the end of each mirror.</p>
+              <p class="old-type">Enter devices to add to the pool: sdb sdc log sdd spare sde <br>
+                Enter devices to create the mirror: sdf sdg spare sdh log sdi</p><br>
+                <p>The better method is to use 'pool modify' to add/ remove spares and logs.</p>
+                <p>For example add a spare device to a pool:</p>
+                <p class="old-type">ovios-shell&gt; pool modify <br>
+                  &nbsp&nbsp&nbsp===================================== <br>
+                  &nbsp&nbsp&nbsp1. Add spare device(s) <br>
+                  &nbsp&nbsp&nbsp------------------------------------- <br>
+                  &nbsp&nbsp&nbsp2. Add read cache device(s) <br>
+                  &nbsp&nbsp&nbsp------------------------------------- <br>
+                  &nbsp&nbsp&nbsp3. Add write cache (log) device(s) <br>
+                  &nbsp&nbsp&nbsp------------------------------------- <br>
+                  &nbsp&nbsp&nbsp4. Remove spare device(s) <br>
+                  &nbsp&nbsp&nbsp------------------------------------- <br>
+                  &nbsp&nbsp&nbsp5. Remove read cache device(s) <br>
+                  &nbsp&nbsp&nbsp------------------------------------- <br>
+                  &nbsp&nbsp&nbsp6. Remove write cache (log) device(s) <br>
+                  &nbsp&nbsp&nbsp------------------------------------- <br>
+                  &nbsp&nbsp&nbspq. Exit this menu <br>
+                  &nbsp&nbsp&nbsp===================================== <br>
+          Enter your choice: 1 <br><br>
+          
+          Enter pool to modify: OVIOSPOOL <br><br>
+          
+          Enter device(s) to add as spare(s): /dev/disk/by-path/pci-0000:00:10.0-scsi-0:0:1:0 <br>
+          Success: adding spare device(s) ==&gt; Pool: OVIOSPOOL ==&gt; Dev: /dev/disk/by-path/pci-0000:00:10.0-scsi-0:0:1:0 <br><br>
+          
+          Press ENTER to continue... <br><br>
+          
+          &nbsp&nbsp&nbsp===================================== <br>
+          &nbsp&nbsp&nbsp1. Add spare device(s) <br>
+          &nbsp&nbsp&nbsp------------------------------------- <br>
+          &nbsp&nbsp&nbsp2. Add read cache device(s) <br>
+          &nbsp&nbsp&nbsp------------------------------------- <br>
+          &nbsp&nbsp&nbsp3. Add write cache (log) device(s) <br>
+          &nbsp&nbsp&nbsp------------------------------------- <br>
+          &nbsp&nbsp&nbsp4. Remove spare device(s) <br>
+          &nbsp&nbsp&nbsp------------------------------------- <br>
+          &nbsp&nbsp&nbsp5. Remove read cache device(s) <br>
+          &nbsp&nbsp&nbsp------------------------------------- <br>
+          &nbsp&nbsp&nbsp6. Remove write cache (log) device(s) <br>
+          &nbsp&nbsp&nbsp------------------------------------- <br>
+          &nbsp&nbsp&nbspq. Exit this menu <br>
+          &nbsp&nbsp&nbsp===================================== <br>
+          Enter your choice: q <br>
+          
+          ovios-shell&gt;</p>
+        </div>
+        <br>
+        <div class="plain-text" id="usage">
+          <h2 id="SetUpSAN">3. Set up SAN (iSCSI)</h2>
+          <p>
+            OviOS can be used as an iSCSI server to easily provide block storage devices to iSCSI initiators. OviOS LUNs can be used in UNIX/Linux environments, Windows or VMWare.
+          </p>
+          <p>
+            To setup an iSCSI server, the admin must follow 3 simple steps:
+          </p>
+          <p>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp1. create iSCSI targets.
+          </p>
+          <p>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2. create LUNs.
+          </p>
+          <p>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp3. map the LUNs to targets.
+          </p>
+          <p>
+            Start the iSCSI server with 'iscsi start'
+          </p>
+          <p class="old-type">
+            ovios-shell&gt; iscsi start <br>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspStarting the iSCSI Target Server... <br>
+  * &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp[  OK  ] <br>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspConfiguring targets...
+<br>  * &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp                                                        [  OK  ] <br>
+ovios-shell&gt;
+          </p> <br>
+          <p>Enable the server to start automatically during boot:</p>
+          <p class="old-type">
+            ovios-shell&gt; options iscsi.enable 1 <br>
+Changing option: iscsi.enable ==&gt; on <br>
+ovios-shell&gt; <br>
+          </p> <br>
+          <p>Type 'options iscsi' for all iscsi related options.</p>
+          <p class="old-type">ovios-shell&gt; options iscsi <br>
+            option iscsi.debug off <br>
+            option iscsi.port <br>
+            option iscsi.enable "on" <br>
+            option iscsi.address <br>
+            ovios-shell&gt;</p> <br>
+          <p>By default, the iSCSI port is 3260, and all IP addresses are enabled.</p> <br><br><br>
+          <h3 id="iscsi">3.1. Create iSCSI targets</h3>
+          <p>Run 'target create' and enter a name for the target when prompted to do so.</p>
+          <p>Enter only a name for the target, the IQN and server identifier will be added automatically by the ovios-shell.</p>
+          <p class="old-type">
+            ovios-shell&gt; target create <br>
+================================================================== <br>
+= This command creates an iSCSI target. You can create multiple targets <br>
+= and control what initiators can connect to them. <br>
+= You can map LUNs to specific targets, thus controlling <br>
+= which client has access to each LUN. <br>
+================================================================== <br>
+The IQN will be appended by the OS. Enter a custom target name: ovios-tg01 <br><br>
+
+Target added successfully <br>
+If no innitiator IP or IQN is assigned to this target, all initiators will have access and will be able to connect. <br>
+Would you like to define an initiator that can access this target? (Default: no) [y|n] y <br>
+Enter IP or IQN of the initiator to access this target: 192.168.0.106 <br>
+Add another initiator? (Default: no) [y | n]: y <br>
+Enter IP or IQN: 192.168.0.107 <br>
+Add another initiator? (Default: no) [y | n]: y <br>
+Enter IP or IQN:  iqn.2012-04.org.ovios:9bfhvndth004-tg01 <br>
+Add another initiator? (Default: no) [y | n]: n <br>
+ovios-shell&gt;
+          </p><br>
+          <p>In this example, only the initiators  with the IP 192.168.0.106, the initiator with IP 192.168.0.107 and the initiator with the IQN iqn.2012-04.org.ovios:9bfhvndth004-tg01 will be allowed to connect to the target.</p>
+          <br><br><br>
+          <h3 id="luns">3.2. Create LUNs</h3>
+          <p>Run 'lun create' and create a LUN. A LUN must be created in a storage pool. </p>
+          <p>Enter the storage pool name when prompted. Enter a LUN name when prompted.</p>
+          <p>A LUN can be thin or thick provisioned. Thin provisioning is disabled by default in OviOS because the target doesn't support the DISCARD SCSI command yet. </p>
+          <p>However, thin LUNs can be created and you can over provision the POOL.</p>
+          <p>It is strongly recommended to create only thick LUNs to have a better grip on the space available.</p>
+          <p>Creating a LUN with lun create:</p>
+          <p class="old-type">
+            ovios-shell&gt; lun create <br>
+Creates a LUN in a storage pool. <br>
+Enter storage pool name: OVIOSPOOL <br><br>
+
+Enter LUN name: lun01 <br><br>
+
+Enter LUN size in g for GB or m for MB etc. Example: 200g | 4T | 1000m: 20g <br>
+Create thin or thick provision LUN? (Default: thick) [thin | thick]: thin <br>
+Creating thin LUN lun01 in OVIOSPOOL <br>
+Success <br>
+ovios-shell&gt;
+          </p> <br>
+          <p>If targets already exist, run 'lun_setup' to create and map the LUN in a single command.</p>
+          <p class="old-type">ovios-shell&gt; lun_setup <br>
+            Enter pool name: OVIOSPOOL <br> <br>
+            
+            LUN will be created in OVIOSPOOL. <br>
+            Enter LUN name: lun02 <br> <br>
+            
+            
+            Enter LUN size in g for GB or m for MB etc. Example: 200g | 4T | 1000m: 2TB <br>
+            Create thin or thick provision LUN? (Default: thick) [thin | thick]: thin <br>
+            Creating LUN lun02... <br>
+            would you like to map the LUN to a target? [y|n] y <br>
+            Enter target name: ovios-tg01 <br> <br>
+             
+            Mapping LUN lun02 to target ovios-tg01 with LUN ID 1.... <br>
+            LUN mapped successfully <br>
+            Updating iscsi config files... <br>
+            ovios-shell&gt;</p> <br>
+            <p>Map the LUNs to targets using 'lun map'. A unique LUN ID will be assigned automatically. </p>
+            <p>This LUN ID will not be changed.</p>
+            <p>Run lun list to get a list of LUNs and their properties.</p>
+            <p class="old-type">
+              ovios-shell&gt; lun list <br>
+NAME&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp            VOLSIZE&nbsp&nbspUSED &nbsp AVAIL  LUN:TYPE  LUN:MAPPED  &nbspLUN:ID<br>
+OVIOSPOOL/lun01      &nbsp&nbsp&nbsp&nbsp&nbsp20G  &nbsp&nbsp12K  &nbsp 7.27G &nbsp&nbsp&nbsp thin    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  no      &nbsp&nbsp    none    <br>
+OVIOSPOOL/lun02       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2T  &nbsp&nbsp12K  &nbsp 7.27G &nbsp&nbsp&nbsp thin     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp yes      &nbsp&nbsp&nbsp&nbsp   1       <br>
+<br>
+LUN:TG-NAME <br>
+none <br>
+iqn.2012-04.org.ovios:fuehvhmbh6uv-ovios-tg01 <br><br>
+ovios-shell&gt;
+            </p> <br>
+            <p>The command lun mappings also displays mapped LUNs</p>
+            <p class="old-type">
+              ovios-shell&gt; lun mappings <br>
+Target 1: iqn.2012-04.org.ovios:fuehvhmbh6uv-ovios-tg01 <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp LUN information: <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp LUN: 1 <br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp/OVIOSPOOL/lun02 <br>
+ovios-shell&gt;
+            </p> <br>
+            <p>Map a LUN to an iSCSI Target:</p>
+            <p class="old-type">
+              ovios-shell&gt; lun map <br>
+Enter pool name: OVIOSPOOL <br> <br>
+
+Enter lun name: lun01 <br> <br>
+
+
+Enter target name: ovios-tg01 <br><br>
+
+Mapping LUN lun01 to target ovios-tg01 with LUN ID 2.... <br>
+Command returned successfully <br>
+Updating iscsi config files... <br>
+LUN lun01 mapped to target ID 1 with LUN ID 2. <br>
+ovios-shell&gt;
+            </p> <br>
+            <p>After LUNs have been mapped, run 'iscsi reload' to make them available. </p>
+            <p>A LUN can only be mapped to one target.</p>
+            <p>LUNs can also be resized, unmapped from targets, deleted or cloned.</p>
+            <p class="old-type">ovios-shell&gt; lun <br>
+              Usage: lun create | delete | info | list | mappings | map | umap | resize | clone <br>
+              ovios-shell&gt;</p> <br>
+              <p>Recommendations:</p>
+              <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspUse meaningful target names.</p>
+              <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspUse only thick LUNs.</p>
+              <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspUse target ACL (when creating targets the command will ask for initiator IP or IQN) to control the iSCSI sessions.</p>
+        </div>
+        <br>
+        <div class="plain-text" id="NAS">
+          <h2>4. Set up NAS (NFS and / or SMB)</h2>
+          <p>
+            OviOS can be used to share volumes via NFS and SMB.
+          </p>
+          <p>
+            OviOS also supports FTP, but not out-of-the-box,  the FTP service must be configured manually.
+          </p>
+          <p>The vol command</p>
+          <p class="old-type">ovios-shell&gt; vol <br>
+            Usage: vol clone | create | delete | list | resize <br>
+            ovios-shell&gt;</p> <br> <br>
+
+            <p>Create volumes you want to share via SMB or NFS:</p>
+            <p><strong>Note</strong>: if there isn't enough space available in the pool, the volumes will still be created but the requested space won't be reserved.</p>
+            <p class="old-type">
+              ovios-shell&gt; vol create <br>
+=================================================== <br>
+= Create a volume inside a storage pool. <br>
+=================================================== <br>
+Enter pool name: OVIOSPOOL <br> <br>
+
+Enter a name for the volume. Letters and numbers in one word only. <br>
+Volume name: smbvol <br> <br>
+
+Enter volume size in g for GB or m for MB etc. Example: 200g | 4T | 1000m. <br>
+Volume size: 10g <br>
+Created volume smbvol in pool OVIOSPOOL. <br>
+Setting quota on smbvol in pool OVIOSPOOL <br>
+Could not reserve 10G for volume smbvol in OVIOSPOOL <br>
+See ovilogs for details <br>
+ovios-shell&gt; <br>
+ovios-shell&gt; vol list <br>
+NAME &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp             USED  &nbsp&nbspAVAIL  MOUNTED  SHARESMB  SHARENFS <br>
+OVIOSPOOL  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        248K  &nbsp&nbsp7.27G      &nbsp&nbspyes  &nbsp&nbsp&nbsp&nbspoff       &nbsp&nbsp&nbsp&nbsp&nbsp&nbspoff <br>
+OVIOSPOOL/nfsvol &nbsp&nbsp 24K  &nbsp&nbsp7.27G      &nbsp&nbspyes  &nbsp&nbsp&nbsp&nbspoff       &nbsp&nbsp&nbsp&nbsp&nbsp&nbspoff <br>
+OVIOSPOOL/smbvol  &nbsp&nbsp 24K  &nbsp&nbsp7.27G      &nbsp&nbspyes  &nbsp&nbsp&nbsp&nbspoff       &nbsp&nbsp&nbsp&nbsp&nbsp&nbspoff <br>
+ovios-shell&gt; <br>
+            </p> <br><br><br>
+            <h3 id="NFS">4.1. NFS server</h3>
+            <p>OviOS supports all NFS versions.  </p>
+            <p>The following options can be used to manage the NFS server.</p>
+            <p class="old-type">
+              ovios-shell&gt; options nfs <br>
+option nfs.threads <br>
+option nfs.enable off <br>
+option nfs.udp.disable off <br>
+option nfs.tcp.disable off <br>
+option nfs.idmap off <br>
+option nfs4.domain <br>
+option nfs.sys.log off <br>
+option nfs.disable.vers <br>
+option nfs.port <br>
+option nfs.debug off <br>
+ovios-shell&gt;
+            </p> <br>
+            <p>Start the NFS server with 'nfs start'</p>
+            <p>Enable the server to start at boot with the options command</p>
+            <p class="old-type">
+              ovios-shell&gt; options nfs.enable on <br>
+Changing option: nfs.enable ==&gt; on <br>
+ovios-shell&gt; nfs start <br>
+ *  Starting NFS statd.. .                                                                                                                             <br>             [  OK  ] <br>
+  *  Starting NFS nfsd...                                                                                                                                 <br>          [  OK  ] <br>
+  *  Starting NFS mountd...                                                                                                                                     <br>    [  OK  ] <br>
+  *  Exporting NFS Filesystems...                                                                                                                                 <br>  [  OK  ] <br>
+ovios-shell&gt;
+            </p> <br><br><br>
+            <h3 id="Export-volumes">4.1.1. Export volumes via NFS</h3>
+            <p>Run 'nfs_export' to export volumes NFS clients.</p>
+            <p>This tool will walk you through the steps to export a volume (an entire pool can also be exported). </p>
+            <p>One can use the default options, or specify custom options. </p>
+            <p>If IPs must be specified,  use colon to separate them, with no spaces in between.</p>
+            <p>Example: 10.0.0.1:10.0.0.2:10.0.0.3</p>
+            <p>Default options are: </p>
+            <p>rw,sync,no_root_squash,no_subtree_check</p>
+            <p>Use 'nfs ss' to see what volumes are exported and what options have been used. </p>
+            <p class="old-type">
+              ovios-shell&gt; nfs ss <br>
+NAME   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp           VALUE <br>
+OVIOSPOOL    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp      off <br>
+OVIOSPOOL/nfsvol &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp rw,no_root_squash,no_subtree_check <br>
+OVIOSPOOL/smbvol &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp off <br>
+ovios-shell&gt;
+            </p>
+            <p>To change, or remove exports, use 'nfs_export' as well.</p>
+            <p>nfs_export is a text UI tool.</p>
+            <br><br><br>
+            <h3 id="SMB">4.2. SMB server</h3>
+            <p>OviOS supports SMB versions 1, 2 and 3. </p>
+            <p>To start the OviOS SMB server, type: 'smb start'. Enable with 'options smb.enabled on'. </p>
+            <p class="old-type">
+              ovios-shell&gt; smb start <br>
+  *  Starting smbd...         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp                                             [  OK  ] <br>
+  *  Starting winbind...        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp                                           [  OK  ] <br>
+ovios-shell&gt; options smb.enable on <br>
+Changing option: smb.enable ==&gt; on <br>
+ovios-shell&gt;
+            </p>
+            <p>The following options manage SMB, WINBIND and NETBIOS.</p>
+            <p class="old-type">
+              ovios-shell&gt; options smb  <br>
+option smb.enable off <br>
+option smb.debug.level <br>
+option smb.port <br>
+ovios-shell&gt; options winbind  <br>
+option winbind.debug.level <br>
+ovios-shell&gt; options netbios <br>  
+option netbios.enable off <br>
+option netbios.debug.level <br>
+ovios-shell&gt; <br>
+            </p>
+            <p>By default NETBIOS is disabled. Enable if needed with: </p>
+            <p class="old-type">
+              ovios-shell&gt; options netbios.enable on <br>
+Changing option: netbios.enable ==&gt; on <br>
+ovios-shell&gt; <br>
+            </p>
+            <br><br><br>
+            <h3 id="Local-authentication">4.2.1. Local authentication</h3> <br>
+            <p>In OviOS Linux, SMB requires users to access shares. </p>
+            <p>These users may then configure guest access via Windows ACLs, however guest access cannot be directly configured in OviOS. </p>
+            <p>To use local authentication (that means without a Domain Controller), one must create smb local users. </p>
+            <p class="old-type">
+              ovios-shell&gt; smbuseradd <br>
+Enter share path [Ex: /pool/volume ] to create a homedirectory for this user: OVIOSPOOL/smbvol <br>
+Enter username:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ovios <br>
+new password: <br>
+retype new password: <br>
+Unix username:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        ovios <br>
+NT username: <br>
+Account Flags:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        [U&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp          ] <br>
+User SID:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp             S-1-5-21-3727678225-3779819685-2349632172-1000 <br>
+Primary Group SID:&nbsp S-1-5-21-3727678225-3779819685-2349632172-513 <br>
+Full Name: <br>
+Home Directory:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp       \\ovios-indt\ovios <br>
+HomeDir Drive: <br>
+Logon Script: <br>
+Profile Path:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp         \\ovios-indt\ovios\profile <br>
+Domain:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp               OVIOS-INDT <br>
+Account desc: <br>
+Workstations: <br>
+Munged dial: <br>
+Logon time:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp           0 <br>
+Logoff time:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp         Wed, 06 Feb 2036 10:06:39 EST <br>
+Kickoff time:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp      Wed, 06 Feb 2036 10:06:39 EST <br>
+Password last set:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   Mon, 19 Oct 2020 12:43:18 EDT <br>
+Password can change:&nbsp&nbsp&nbsp&nbsp&nbsp  Mon, 19 Oct 2020 12:43:18 EDT <br>
+Password must change: never <br>
+Last bad password :&nbsp&nbsp&nbsp&nbsp 0 <br>
+Bad password count  :&nbsp&nbsp&nbsp 0 <br>
+Logon hours         : FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF <br>
+ovios-shell&gt;
+            </p> <br>
+            <p>'smbuserlist' and 'smbuserdel' are also useful to list or delete smb local users.</p>
+            <p class="old-type">
+              ovios-shell&gt; smbuserlist <br>
+ovios:1000: <br>
+ovios-shell&gt; smbuserdel <br>
+Enter username to delete: ovios <br>
+Delete home directory for this user (Default: yes)  [y|n]?  y <br>
+ovios-shell&gt;
+            </p><br><br><br>
+            <h3 id="Remote-authentication">4.2.2. Remote authentication</h3>
+            <p>OviOS SMB Server can join a windows Domain Controller and use AD users for authentication.</p>
+            <p>Type 'smbovios --join' to start the tool to join a DC. </p> <br>
+            <p>This tool will guide you through to joining a DC. It will require:</p>
+            <p>&nbsp&nbsp&nbsp- a domain username with joining privileges (For Ex: Administrator)</p>
+            <p>&nbsp&nbsp&nbsp- the domain name</p>
+            <p>&nbsp&nbsp&nbsp- the workgroup as defined in your DC</p>
+            <p>&nbsp&nbsp&nbsp- the AD computer name (hostname, most cases FQDN)</p>
+            <p>&nbsp&nbsp&nbsp- a volume path to the root share (/pool/volume) </p>
+            <p>&nbsp&nbsp&nbsp- IP of the DC</p>
+            <p>&nbsp&nbsp&nbsp- IP of the DNS and IP of the NTP server (most cases same as DC)</p> <br>
+            <p>Type 'smbovios --info ' or 'smbovios --unjoin' to get details about the DC or to unjoin the DC. </p> <br>
+            <p>During the joining process the resolv.conf and nsswitch.conf files are modified. If you require modifications to these files, redo so after joining the DC.</p>
+            <p>When the --unjoin option is used and the OviOS SMB server leaves a DC, the config files are set back to the state prior to joining the DC.</p>
+            <p>Type 'smb ad-users' for a list of AD users. </p> <br><br><br>
+            <h3 id="Export-volumes-SMB">4.2.3. Export volumes via SMB</h3>
+            <p>Type 'smb_export' to export volumes via SMB. </p>
+            <p>This user will be used to manage the share permissions.       </p>
+            <p>NOTE: ovios is not an SMB user, therefore this user won't be accepted. </p>
+            <p>Only users listed with 'smb ad-users' and 'smbuserlist' can manage shares.</p>
+            <p>'smb_export' can also be used to remove shares. </p>
+        </div>
+        <br>
+        <div class="plain-text" id="replications">
+          <h2>5. Set up replication</h2>
+          <p>Replication can be setup between 2 (or more) OviOS nodes or one OviOS node and another Linux system which runs zfs on linux.</p>
+          <p>If the destination is not an OviOS system, it must have the 'zfs' and 'zpool' binaries in /usr/sbin.
+
+          </p>
+          <p>Before setting up replication, make sure that:</p>
+          <p>The ssh passwordless authentication must be set up for user root between the nodes.</p>
+          <p>Make sure the source node can ssh into the destination node with user root without password.</p>
+          <p>You can achieve this by generating a public ssh key and copying it to the remote node using ssh-copy-id</p>
+          <p class="old-type">
+            ovios-shell&gt; linuxcmd <br>
+Dropping to the Linux bash shell... <br>
+ovios-indt:~ # ssh-keygen <br>
+Generating public/private rsa key pair. <br> <br>
+
+Enter file in which to save the key (/root/.ssh/id_rsa): Enter passphrase (empty for no passphrase): <br>
+Enter same passphrase again: <br>
+Your identification has been saved in /root/.ssh/id_rsa. <br>
+Your public key has been saved in /root/.ssh/id_rsa.pub. <br>
+The key fingerprint is: <br>
+SHA256:CRDFzupr4nij1Ss5pza20qZJpkpcGJJX+W9wF0vY8Tw root@ovios-indt <br>
+The key's randomart image is: <br>
++---[RSA 3072]----+ <br>
+| &nbsp&nbsp&nbsp   +=.  o..  &nbsp&nbsp&nbsp   | <br>
+| . .... . +o  &nbsp&nbsp&nbsp   | <br>
+|o..  +.  . oE  &nbsp&nbsp&nbsp&nbsp   | <br>
+|..o   =...o  . &nbsp&nbsp&nbsp&nbsp   | <br>
+| . . . +S.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp      | <br>
+|. ...   o&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp        | <br>
+| *.o.  .&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp         | <br>
+|*+& +.  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp         | <br>
+|OX+@o.  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp         | <br>
++----[SHA256]-----+ <br>
+ovios-indt:~ # ssh-copy-id -i ~/.ssh/id_rsa.pub remote-server <br>
+          </p><br>
+          <p>When running a full replication with retadm initiate, the source pool and dataset MUST exist.</p>
+          <p>On the destination, only the pool must exists, the destination dataset will be created by retadm.</p>
+          <p>If the destination dataset exists, the command will  print an error and exit.</p>
+          <p>The replication tool is called 'retadm'.</p>
+          <p class="old-type">
+            ovios-shell&gt; retadm <br><br>
+
+    Usage: <br>
+    &nbsp&nbsp&nbsp&nbsp&nbspretadm initiate - initiates a new full replication <br> <br>
+    &nbsp&nbsp&nbsp&nbsp&nbspretadm inc &lt;poolname/dataset&gt; - runs an incremental replication for poolname/dataset <br> <br>
+    &nbsp&nbsp&nbsp&nbsp&nbspretadm modify &lt;poolname/dataset&gt; - allows to modify the destination hostname or IP <br> <br>
+    &nbsp&nbsp&nbsp&nbsp&nbspretadm reset &lt;poolname/dataset&gt; - resets all replication properties for poolname/dataset <br> <br>
+    &nbsp&nbsp&nbsp&nbsp&nbspretadm status - displays a current status for all datasets in the system, on which <br> <br>
+                        replication is enabled. The ones without replication enabled are ignored <br> <br>
+                        &nbsp&nbsp&nbsp&nbsp&nbspretadm help - prints usage and help menu. <br><br>
+
+ovios-shell&gt;
+          </p> <br><br><br>
+          <h3 id="initial-replication">5.1. Initial replication</h3>
+          <p>Run 'retadm initiate' . </p>
+          <p>The interactive tool will ask for the destination hostname or IP, will check if the destination is reachable and passwordless authentication works.</p>
+          <p>The following example sets up replication for lun1 in OVIOSPOOL, will be sent to remote host with IP 192.168.0.135, and will create a replicated LUN lun01-replicated in the remote pool OVIOSPOOL-REP.</p> <br>
+          <p class="old-type">
+            ovios-shell&gt; retadm initiate  <br>
+Initiates a new replication for a vol or LUN. <br>
+Requires ssh authetication to already be configured. <br>
+Enter the destination host or IP: 192.168.0.135 <br>
+Checking 192.168.0.135 is available <br>
+192.168.0.135 found and is accessible <br>
+Checking if passwordless authentication works to 192.168.0.135 <br>
+Passwordless authentication tested successfully to 192.168.0.135 <br>
+Enter the source poolname: OVIOSPOOL <br> <br>
+
+Enter the volume name or LUN name: lun01 <br><br>
+
+Enter the destination poolname: OVIOSPOOL-RET <br><br>
+
+Enter the destination dataset to be created: lun01-replicated <br>
+Checking 192.168.0.135 is available <br>
+192.168.0.135 found and is accessible <br>
+Checking if passwordless authentication works to 192.168.0.135 <br>
+Passwordless authentication tested successfully to 192.168.0.135 <br>
+Created a new snapshot for OVIOSPOOL/lun01 named OVIOSPOOL/ <br> lun01@ovios_repl_full-2019-01-08_13:59:07 <br>
+Started full replication for OVIOSPOOL/lun01 to 192.168.0.135 OVIOSPOOL-RET/lun01-replicated <br>
+ovios-shell&gt;<br>
+          </p><br><br><br>
+          <h3 id="incremental-replication">5.2. Incremental replication</h3>
+          <p>Once the initial replication completes, the admin can setup a cron job to schedule replication for multiple volumes and LUNs.</p>
+          <p>'retadm' logs activity and errors in /var/log/ret.</p>
+          <p>To schedule replication, use 'edit_cron' from ovios-shell, and add a cron job. For ex:
+
+          </p> <br>
+          <p class="old-type">
+            ovios-shell&gt; edit_cron vim  <br>
+2019-01-08 14:07:13  INFO listing root's fcrontab  <br>
+PATH=/bin:/sbin:/usr/bin:/usr/sbin <br>
+0 3 * * *   /usr/sbin/logrotate -f /etc/logrotate.conf <br>
+*/30 * * * * /sbin/retadm inc OVIOSPOOL/lun01 <br>
+          </p>
+          <p>This line (*/30 * * * * /sbin/retadm inc OVIOSPOOL/lun01) means OVIOSPOOL/lun01 will be replicated every 30 minutes to the destination we already setup with "retadm initiate</p>
+          <p>To modify the destination for a dataset, use 'retadm modify'. </p> <br><br><br>
+          <h3 id="break-replication">5.3. Break replication </h3>
+          <p>Breaking a replication will remove the replication relationship between source and destination and will remove base snapshots on source and destination. </p>
+          <p>The source and destination volume or LUNs will not be removed.</p>
+          <p class="old-type">
+            ovios-shell&gt; retadm reset OVIOSPOOL/lun01 <br>
+This will break replication for retpool/vol0 and delete the base snapshot. <br>
+It will not remove the destination dataset, but will remove the destination base snapshot <br>
+Enter YES to continue: YES <br>
+Finished resetting replication for OVIOSPOOL/lun01 <br>
+ovios-shell&gt; 
+          </p>
+        </div>
+        <div class="plain-text" id="disaster">
+          <h2>6. Disaster recovery (DR)</h2>
+          <p>DR refers to the possibility to easily and quickly make production data accessible to clients during a period when the production system is unavailable.</p>
+          <p>To make sure this is possible, always use an OviOS remote system where you replicate your critical volumes and LUN. </p>
+          <p>The replicated shares and LUNs are always available on the destination system. </p>
+          <p>The destination system's configuration can be synced with the source automatically, so that in a DR scenario all shares, LUNs and iSCSI Targets are available immediately.</p>
+          <p>For this to work, the pool name on the source and destination must be identical, and all shares and LUNs on the destination must have the same name as the source.</p> <br>
+          <p>If these requirements are met, run <strong>'sync-config dest &lt;destination host or IP&gt;</strong> </p>
+          <p><strong>This will sync all users, groups, hosts, SMB settings, iSCSI settings to the destination. </strong></p>
+          <p>The network settings are , for obvious reasons, not synced, as the source has a different hostname and IP addresses. </p>
+          <p>Therefor, a scheduled cron job should be setup to periodically sync the config.</p>
+          <p>For ex: */30 * * * * /sbin/sync-config dest-hostname</p> <br>
+          <p>Once a DR scenario occurs and the remote system is required to serve production data, via iSCSI, SMB and NFS, and sync-config is up to date (all users, iSCSI settings, NFS shares, SMB users and shares) simply point the clients to the remote system IP or hostname. </p>
+          <p>In cases when this is not a true DR system, and the destination host requires different local settings, then the admin must prepare the config manually.</p>
+          <p> Create local users, create SMB users, join to an AD and so on. </p>
+          <p>There is a tool called <strong> ovios_restore</strong> that can be used on the destination to automatically create the targets and map the replicated LUNs to the targets, by not removing any targets which exist already on the system. </p>
+          <p>However, the LUNs will be mapped with their original LUN IDs, so in this case the admin must be carefull not to have duplicate LUN IDs,  and correct those manually if needed.
+
+          </p>
+        </div>
+        <br>
+      </div>
+
+      <footer>
+        <div class="row div-container">
+          <div class="col-md-3 div-footer sign">
+            <a href="">
+              <img src="/Favicon%20copy.13a93fc1.png" width="130px" style="margin-left: 15%" alt="">
+              <a class="navbar-brand footer-text-logo" href="">Ovi OS Linux</a>
+            </a>
+          </div>
+          <div class="col-md-3 div-footer">
+            <h5>Documentation</h5>
+            <br>
+            <a href="/documentation/The%20admin%20guide/adminguide.html">The Admin Guide</a>
+            <br>
+            <a href="/documentation/System%20backup%20and%20system%20live%20guide/system_backup.html">System backup and system live guide</a>
+            <br>
+            <a href="/documentation/The%20autosnap%20Guide/autosnap.html">The 'autosnap' Guide</a>
+            <br>
+            <a href="/documentation/The%20%27bondadm%27%20Guide/bondadm.html">The 'bondadm' Guide</a>
+            <br>
+            <a href="/documentation/The%20%27options%20Guide/options.html">The 'options' Guide</a>
+            <br>
+            <a href="/documentation/The%20OviOS%20HA%20Cluster%20Guide/Cluster%20Guide.html">The OviOS HA Cluster Guide</a>
+            <br><br><br>
+          </div>
+          <div class="col-md-3 div-footer">
+            <h5>Technology</h5>
+            <br>
+            <a href="/nav-content/download/download.html">Download</a>
+            <br>
+            <a href="/nav-content/use-cases/use-cases.html">Use Cases</a>
+            <br>
+            <a href="/nav-content/FAQ/FAQ.html">FAQ & Features</a>
+            <br>
+            <a href="/nav-content/Services/services.html">Services</a>
+            <br><br><br>
+          </div>
+          <div class="col-md-3 div-footer">
+            <h5>Contact</h5>
+            <br>
+            <a href="/nav-content/contact/contact.html">ovi@ovios.org</a>
+          </div>
+        </div>
+        <div class="social-media-logos">
+          <a href="https://twitter.com/ovioslinux" target="_blank">
+            <i class="fa-brands fa-twitter"></i></a>
+          <a href="https://www.youtube.com/c/oviosorgstorage/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+          <p class="copyright-text">Copyright © 2012-2022 OviOS Linux</p>
+        </div>
+      </footer>
+    
+    <!-- Script -->
+    <script src="/documentation/The%20admin%20guide/adminguide.f0d3ecd0.js"></script>
+  </body>
+</html>

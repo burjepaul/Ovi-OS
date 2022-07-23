@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <title>OviOS Linux</title>
+    <link rel="icon" type="image/png" href="/Favicon.bf9a340b.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/documentation/The%20autosnap%20Guide/autosnap.45b8be6f.css">
+  </head>
+  <body>
+    <div class="download-body-tag">
+      <!-- Nav Bar -->
+      <section class="navigation-section" id="nav-Section">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark py-0">
+          <a href="">
+            <img class="navbar-logo" src="/LogoImage.21dea4b4.png" style="margin-left: 15%" alt="">
+          </a>
+          <a class="navbar-brand" style="margin-left: 1%" href="">Ovi OS Linux</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav ms-auto">
+              <li class="navbar-item">
+                <a href="/index.html" class="nav-link">Home</a>
+              </li>
+              <li class="navbar-item">
+                <a href="/nav-content/download/download.html" class="nav-link">Download</a>
+              </li>
+              <li class="navbar-item">
+                <div class="dropdown">
+                  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                    Documentation
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li>
+                      </li><li>
+                        <a class="dropdown-item" href="/documentation/Documentation/documentation.html">Documentation</a>
+                      </li>
+                      <a class="dropdown-item" href="/documentation/The%20admin%20guide/adminguide.html">The Admin Guide</a>
+                    </ul></div></li>
+                    <li>
+                      <a class="dropdown-item" href="/documentation/System%20backup%20and%20system%20live%20guide/system_backup.html">System backup and system live guide</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="">The 'autosnap' Guide</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/documentation/The%20%27bondadm%27%20Guide/bondadm.html">The 'bondadm' Guide</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/documentation/The%20%27options%20Guide/options.html">The 'options' Guide</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/documentation/The%20OviOS%20HA%20Cluster%20Guide/Cluster%20Guide.html">The OviOS HA Cluster Guide</a>
+                    </li>
+                  </ul>
+                </div>
+              
+              <li class="navbar-item">
+                <a class="nav-link" href="/nav-content/use-cases/use-cases.html">Use Cases</a>
+              </li>
+              <li class="navbar-item">
+                <a class="nav-link" href="/nav-content/FAQ/FAQ.html">FAQ & Features</a>
+              </li>
+              <li class="navbar-item">
+                <a class="nav-link" href="/nav-content/contact/contact.html">Contact</a>
+              </li>
+              <li class="navbar-item">
+                <a class="nav-link" href="/nav-content/Services/services.html">Services</a>
+              </li>
+            
+          </nav></section></div>
+        
+      
+
+      <!-- Title section -->
+      <div class="title">
+        <h1>Autosnap Guide</h1>
+      </div>
+
+      <!-- Buttons section -->
+      <section class="buttons-section">
+        <div class="buttons-container">
+          <div class="mini-titles">
+            <a href="#take-snapshot-all">1. Take a snapshot of all available datasets in the system</a>
+            <a href="#take-snapshot-LUNs">2. Take a snapshot of a one or more LUNs or Volumes and keep the last 7.</a>
+            <a href="#schedule-snapshots">3. Schedule snapshots with a cron job:</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="plain-text">
+        <p>
+          &nbsp&nbsp&nbsp&nbsp <strong>"autosnap" </strong>is a command used to schedule snapshots in OviOS Linux.
+        </p>
+        <p>
+          The tool is not available from the ovios shell.
+        </p>
+        <p class="old-type">
+          # autosnap --help <br>
+Usage: /usr/sbin/autosnap [options] [-l label] &lt;'//' | name [name...]&gt; <br>
+  --default-exclude  Exclude datasets if com.ovios:auto-snapshot is unset. <br>
+  -d, --debug &nbsp &nbsp &nbsp &nbsp       Print debugging messages. <br>
+  -e, --event=EVENT &nbsp Set the com.ovios:auto-snapshot-desc property to EVENT. <br>
+      --fast      &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   Use a faster zfs list invocation. <br>
+  -n, --dry-run   &nbsp&nbsp&nbsp&nbsp   Print actions without actually doing anything. <br>
+  -s, --skip-scrub &nbsp Do not snapshot filesystems in scrubbing pools. <br>
+  -h, --help      &nbsp &nbsp &nbsp &nbsp   Print this usage message. <br>
+  -k, --keep=NUM  &nbsp&nbsp&nbsp   Keep NUM recent snapshots and destroy older &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp snapshots. <br>
+  -l, --label=LAB  &nbsp&nbsp  LAB is usually 'hourly', 'daily', or 'monthly'. <br>
+  -p, --prefix=PRE &nbsp  PRE is 'ovios-auto-snap' by default. <br>
+  -q, --quiet    &nbsp &nbsp &nbsp&nbsp    Suppress warnings and notices at the console. <br>
+      --sep=CHAR  &nbsp &nbsp &nbsp &nbsp   Use CHAR to separate date stamps in snapshot &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp names. <br>
+  -g, --syslog    &nbsp &nbsp&nbsp&nbsp   Write messages into the system log. <br>
+  -r, --recursive  &nbsp&nbsp  Snapshot named filesystem and all descendants. <br>
+  -v, --verbose   &nbsp&nbsp&nbsp&nbsp   Print info messages. <br>
+      --destroy-only &nbsp &nbsp Only destroy older snapshots, do not create new &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp ones. <br>
+      name           Filesystem and volume names, or '//' for all ZFS datasets. <br>
+        </p>
+        <p>Examples using autosnap:</p>
+      </div>
+
+      <div class="documentation-text">
+        <div class="plain-text" id="take-snapshot-all">
+          <h2>1. Take a snapshot of all available datasets in the system</h2>
+          <p class="old-type">
+            ovios-indt:~ # autosnap // <br>
+@ovios-auto-snap-2020-10-19-1356, 1 created, 0 destroyed, 0 warnings. <br>
+ovios-indt:~ # <br>
+          </p>
+          <p>Now you can list all the snapshots in the shell:</p> <br>
+          <p class="old-type">
+            ovios-indt:~ # exit <br>
+ovios-shell&gt; snap list <br>
+List snapshot for a specific volume? If not, all will be listed. (Default: list ALL) [y | n] <br>
+NAME   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp     USED <br>
+OVIOSPOOL@ovios-auto-snap-2020-10-19-1356  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp          0B  &nbsp &nbsp&nbspCREATION: Mon Oct 19 13:56 2020 <br>
+OVIOSPOOL/lun01@ovios-auto-snap-2020-10-19-1356  &nbsp &nbsp &nbsp    0B &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp CREATION: Mon Oct 19 13:56 2020 <br>
+OVIOSPOOL/lun02@ovios-auto-snap-2020-10-19-1356    &nbsp &nbsp &nbsp     0B &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp CREATION: Mon Oct 19 13:56 2020 <br>
+OVIOSPOOL/nfsvol@ovios-auto-snap-2020-10-19-1356   &nbsp &nbsp&nbsp   0B &nbsp &nbsp &nbsp &nbsp &nbsp &nbspCREATION:  Mon Oct 19 13:56 2020 <br>
+OVIOSPOOL/osbackup@ovios-auto-snap-2020-10-19-1356  &nbsp&nbsp 0B &nbsp &nbsp &nbsp &nbsp &nbspCREATION: Mon Oct 19 13:56 2020 <br>
+OVIOSPOOL/smbvol@ovios-auto-snap-2020-10-19-1356    &nbsp&nbsp&nbsp&nbsp   0B &nbsp &nbsp &nbsp &nbsp  CREATION:Mon Oct 19 13:56 2020 <br>
+ovios-shell&gt; <br>
+          </p>
+        <br>
+      </div>
+    </div>
+    <div class="documentation-text">
+      <div class="plain-text" id="take-snapshot-LUNs">
+        <h2>2. Take a snapshot of a one or more LUNs or Volumes and keep the last 7.</h2>
+        <p class="old-type">
+          ovios-indt:~ # autosnap -g -r -k 7 OVIOSPOOL/lun01 OVIOSPOOL/smbvol <br>
+          @ovios-auto-snap-2020-10-19-1358, 2 created, 0 destroyed, 0 warnings. <br>
+          ovios-indt:~ #<br>
+        </p>
+        <p>In this example we take new snapshots for lun01 and smbvol, and keep the last 7 snapshots.</p> <br>
+      <br>
+    </div>
+  </div>
+  <div class="documentation-text">
+    <div class="plain-text" id="schedule-snapshots">
+      <h2>3. Schedule snapshots with a cron job:</h2>
+      <p>In this example it will take a snapshot of all datasets available every minute, and will only keep the 3 latest of each dataset.</p>
+      <p class="old-type">
+        ovios-shell&gt; edit_cron vim <br>
+        2016-08-14 02:31:50  INFO listing root's fcrontab <br>
+        PATH=/bin:/sbin:/usr/bin:/usr/sbin <br>
+        0 3 * * *   /usr/sbin/logrotate /etc/logrotate.conf <br>
+        * * * * *   /sbin/autosnap -k 3 // <br>
+      </p><br>
+    <br>
+  </div>
+</div>
+
+<footer>
+  <div class="row div-container">
+    <div class="col-md-3 div-footer sign">
+      <a href="">
+        <img src="/Favicon%20copy.13a93fc1.png" width="130px" style="margin-left: 15%" alt="">
+        <a class="navbar-brand footer-text-logo" href="">Ovi OS Linux</a>
+      </a>
+    </div>
+    <div class="col-md-3 div-footer">
+      <h5>Documentation</h5>
+      <br>
+      <a href="/documentation/The%20admin%20guide/adminguide.html">The Admin Guide</a>
+      <br>
+      <a href="/documentation/System%20backup%20and%20system%20live%20guide/system_backup.html">System backup and system live guide</a>
+      <br>
+      <a href="/documentation/The%20autosnap%20Guide/autosnap.html">The 'autosnap' Guide</a>
+      <br>
+      <a href="/documentation/The%20%27bondadm%27%20Guide/bondadm.html">The 'bondadm' Guide</a>
+      <br>
+      <a href="/documentation/The%20%27options%20Guide/options.html">The 'options' Guide</a>
+      <br>
+      <a href="/documentation/The%20OviOS%20HA%20Cluster%20Guide/Cluster%20Guide.html">The OviOS HA Cluster Guide</a>
+      <br><br><br>
+    </div>
+    <div class="col-md-3 div-footer">
+      <h5>Technology</h5>
+      <br>
+      <a href="/nav-content/download/download.html">Download</a>
+      <br>
+      <a href="/nav-content/use-cases/use-cases.html">Use Cases</a>
+      <br>
+      <a href="/nav-content/FAQ/FAQ.html">FAQ & Features</a>
+      <br>
+      <a href="/nav-content/Services/services.html">Services</a>
+      <br><br><br>
+    </div>
+    <div class="col-md-3 div-footer">
+      <h5>Contact</h5>
+      <br>
+      <a href="/nav-content/contact/contact.html">ovi@ovios.org</a>
+    </div>
+  </div>
+  <div class="social-media-logos">
+    <a href="https://twitter.com/ovioslinux" target="_blank">
+      <i class="fa-brands fa-twitter"></i></a>
+    <a href="https://www.youtube.com/c/oviosorgstorage/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    <p class="copyright-text">Copyright © 2012-2022 OviOS Linux</p>
+  </div>
+</footer>
+    
+    
+    <!-- Script -->
+    <script src="/documentation/The%20autosnap%20Guide/autosnap.bba19b89.js"></script>
+  </body>
+</html>

@@ -7,20 +7,26 @@ window.onscroll = function() {
     prevScrollpos = currentScrollPos;
 };
 //Scrolling movement
-const allSection = document.querySelectorAll('.observer-section');
+const allSection = document.querySelectorAll(".observer-section");
+const getStartedText = document.querySelector(".plain-text");
+const getStartedButton = document.querySelector(".get-started-container");
 const revealSection = function(entries, observer) {
     const [entry] = entries;
     if (!entry.isIntersecting) return;
-    entry.target.classList.remove('section--hidden');
+    entry.target.classList.remove("section--hidden");
     observer.unobserve(entry.target);
 };
 const sectionObserver = new IntersectionObserver(revealSection, {
     root: null,
-    threshold: 0.15
+    threshold: 0.08
 });
 allSection.forEach(function(section) {
     sectionObserver.observe(section);
-    section.classList.add('section--hidden');
+    section.classList.add("section--hidden");
+});
+getStartedButton.addEventListener("click", (event)=>{
+    event.preventDefault();
+    getStartedText.classList.toggle("hidden");
 });
 
 //# sourceMappingURL=index.672d4772.js.map

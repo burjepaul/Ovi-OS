@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <title>OviOS Linux</title>
+    <link rel="icon" type="image/png" href="/Favicon.bf9a340b.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/documentation/The%20%27bondadm%27%20Guide/bondadm.042df5b9.css">
+  </head>
+  <body>
+    <div class="download-body-tag">
+      <!-- Nav Bar -->
+      <section class="navigation-section" id="nav-Section">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark py-0">
+          <a href="">
+            <img class="navbar-logo" src="/LogoImage.21dea4b4.png" style="margin-left: 15%" alt="">
+          </a>
+          <a class="navbar-brand" style="margin-left: 1%" href="">Ovi OS Linux</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav ms-auto">
+              <li class="navbar-item">
+                <a href="/index.html" class="nav-link">Home</a>
+              </li>
+              <li class="navbar-item">
+                <a href="/nav-content/download/download.html" class="nav-link">Download</a>
+              </li>
+              <li class="navbar-item">
+                <div class="dropdown">
+                  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                    Documentation
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                    <li>
+                      </li><li>
+                        <a class="dropdown-item" href="/documentation/Documentation/documentation.html">Documentation</a>
+                      </li>
+                      <a class="dropdown-item" href="/documentation/The%20admin%20guide/adminguide.html">The Admin Guide</a>
+                    </ul></div></li>
+                    <li>
+                      <a class="dropdown-item" href="/documentation/System%20backup%20and%20system%20live%20guide/system_backup.html">System backup and system live guide</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/documentation/The%20autosnap%20Guide/autosnap.html">The 'autosnap' Guide</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="">The 'bondadm' Guide</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/documentation/The%20%27options%20Guide/options.html">The 'options' Guide</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="/documentation/The%20OviOS%20HA%20Cluster%20Guide/Cluster%20Guide.html">The OviOS HA Cluster Guide</a>
+                    </li>
+                  </ul>
+                </div>
+              
+              <li class="navbar-item">
+                <a class="nav-link" href="/nav-content/use-cases/use-cases.html">Use Cases</a>
+              </li>
+              <li class="navbar-item">
+                <a class="nav-link" href="/nav-content/FAQ/FAQ.html">FAQ & Features</a>
+              </li>
+              <li class="navbar-item">
+                <a class="nav-link" href="/nav-content/contact/contact.html">Contact</a>
+              </li>
+              <li class="navbar-item">
+                <a class="nav-link" href="/nav-content/Services/services.html">Services</a>
+              </li>
+            
+          </nav></section></div>
+        
+      
+
+      <!-- Title section -->
+      <div class="title">
+        <h1>The 'bondadm' Guide</h1>
+      </div>
+
+      <!-- Buttons section -->
+      <section class="buttons-section">
+        <div class="buttons-container">
+          <div class="mini-titles">
+            <a href="#create">1. Create a bonded interface:</a>
+            <a href="#delete">2. Delete a bonded interface.</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="plain-text">
+        <p>
+          &nbsp&nbsp&nbsp&nbsp <strong>bondadm </strong>is a tool used to create and activate aggregated link. 
+        </p>
+        <p>
+          It will load the bonding driver when it is first run, in case the driver is not already loaded, it will create the appropriate bonding scripts in /etc/sysconfig/ov-net/ which will be called at boot by the sysvinit scripts.
+        </p>
+        <p>
+          &nbsp&nbsp&nbsp&nbsp <strong>bondadm </strong>can be run from the linux shell, or from ovios-shell. In ovios-shell it will open it's own subshell, where the admin must only enter the options. 
+        </p>
+        <p class="old-type">
+          ovios-shell&gt; bondadm <br><br>
+
+Type only the command arguments, like: -l | -h | -n etc. <br>
+To exit the bondadm CLI enter q or quit. <br> <br>
+
+bondadm &gt; -h <br><br>
+
+    The command bondsetup creates a bonded interface using one 
+    or more physical interfaces. <br>
+<br>
+    Syntax: bondadm -[l|n|m|i|r|h|v] <br><br>
+
+    OPTIONS: <br>
+            -l : lists all bonded interfaces and their physical interfaces <br><br>
+
+            -n : name of the interface to be created. <br> <br>
+
+            -m : aggergation mode of the new bond. <br>
+            Possible options are: 0 1 2 3 4 5 6 <br>
+            &nbsp&nbsp&nbsp&nbsp    0 = balance-rr (default) <br>
+            &nbsp&nbsp&nbsp&nbsp                1 = active-backup <br>
+            &nbsp&nbsp&nbsp&nbsp                2 = balance-xor <br>
+            &nbsp&nbsp&nbsp&nbsp                3 = broadcast <br>
+            &nbsp&nbsp&nbsp&nbsp                4 = 802.3ad <br>
+            &nbsp&nbsp&nbsp&nbsp                5 = balance-tlb <br>
+            &nbsp&nbsp&nbsp&nbsp                6 = balance-alb <br> <br>
+
+            -i : physical interfaces to bond. If more than one, enter <br>
+                     -i multiple times. Ex: -i eth0 -i eth2 <br><br>
+
+            -r : removes a bonded interface. Requires bond name. <br><br>
+
+            -h : print usage <br><br>
+
+            -v : print version <br><br>
+
+Type only the command arguments, like: -l | -h | -n etc. <br>
+To exit the bondadm CLI enter q or quit. <br><br>
+
+bondadm &gt;
+        </p>
+      </div>
+
+      <div class="documentation-text">
+        <div class="plain-text" id="create">
+          <h2>1. Create a bonded interface:</h2>
+          <p><strong>It requires all of these options: -n -i -m</strong></p>
+          <p>-n defines the name of the new interface. It must be a name not already existing in the system, as a physical or bonded interface.</p>
+          <p>-i defines the physical interfaces to be bonded. Usually there are more than one which will be used, use -i multiple times.</p>
+          <p>-m is the mode of the aggregation. Enter numbers between 0 and 6. See the description for each mode above. make sure you switch and NICs support the chosen mode</p>
+          <p>-l lists all bonded interfaces, with status, mode and physical interfaces used as slaves. Must be the only option given.</p>
+          <p>-r removes a bond. Must be followed by the name of the bond.</p>
+          <p>-h prints the help menu.</p>
+          <p>-v prints version information.
+          </p> <br>
+          <p><strong>Examples:</strong></p>
+          <p>Create a new bonded interface called bond1 using 2 physical interfaces (eth1 and eth2), of balancing mode balance-xor, and list it after.</p>
+          <p class="old-type">
+            ovios-shell&gt; bondadm <br><br>
+
+Type only the command arguments, like: -l | -h | -n etc. <br>
+To exit the bondadm CLI enter q or quit. <br><br>
+
+bondadm &gt; -n bond1 -i eth1 -i eth2 -m 2 <br>
+&nbsp&nbsp  * &nbsp&nbsp Adding eth1 as slave...  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   [  OK  ] <br>
+&nbsp&nbsp  * &nbsp&nbsp Adding eth2 as slave...  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   [  OK  ] <br>
+     Finished setting up bond1 <br>
+     Run : netsetup : to set up the IPs. <br><br>
+
+Type only the command arguments, like: -l | -h | -n etc. <br>
+To exit the bondadm CLI enter q or quit. <br><br>
+
+bondadm &gt; -l <br>
+1 ==&gt;&gt; bond1 : STATE: down : MODE: balance-xor 2 <br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   Physical interfaces: <br> 
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp       1 ==&gt; eth1 <br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp       2 ==&gt; eth2 <br><br>
+
+
+Type only the command arguments, like: -l | -h | -n etc. <br>
+To exit the bondadm CLI enter q or quit. <br><br>
+
+bondadm &gt;
+          </p>
+          <p>The order in which the options are given is not important.</p>
+      </div>
+    </div>
+    <div class="documentation-text">
+      <div class="plain-text" id="delete">
+        <h2>2. Delete a bonded interface.</h2>
+        <p>The option -s -r <interface name=""></interface></p>
+        <p class="old-type">
+          ovios-shell&gt; bondadm <br><br>
+
+Type only the command arguments, like: -l | -h | -n etc. <br>
+To exit the bondadm CLI enter q or quit. <br><br>
+
+bondadm &gt; -l <br>
+1 ==&gt;&gt; bond1 : STATE: down : MODE: balance-xor 2 <br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp        Physical interfaces: <br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp        1 ==&gt; eth1 <br>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp        2 ==&gt; eth2 <br><br>
+
+
+Type only the command arguments, like: -l | -h | -n etc. <br>
+To exit the bondadm CLI enter q or quit. <br> <br>
+
+bondadm &gt; -r bond1 <br>
+&nbsp &nbsp  * &nbsp &nbsp Removing bond1..  &nbsp &nbsp &nbsp &nbsp   [  OK  ] <br> <br>
+
+Type only the command arguments, like: -l | -h | -n etc. <br>
+To exit the bondadm CLI enter q or quit. <br><br>
+
+bondadm &gt; q <br>
+ovios-shell&gt;</p> <br>
+      <br>
+    </div>
+  </div>
+
+  <footer>
+    <div class="row div-container">
+      <div class="col-md-3 div-footer sign">
+        <a href="">
+          <img src="/Favicon%20copy.13a93fc1.png" width="130px" style="margin-left: 15%" alt="">
+          <a class="navbar-brand footer-text-logo" href="">Ovi OS Linux</a>
+        </a>
+      </div>
+      <div class="col-md-3 div-footer">
+        <h5>Documentation</h5>
+        <br>
+        <a href="/documentation/The%20admin%20guide/adminguide.html">The Admin Guide</a>
+        <br>
+        <a href="/documentation/System%20backup%20and%20system%20live%20guide/system_backup.html">System backup and system live guide</a>
+        <br>
+        <a href="/documentation/The%20autosnap%20Guide/autosnap.html">The 'autosnap' Guide</a>
+        <br>
+        <a href="/documentation/The%20%27bondadm%27%20Guide/bondadm.html">The 'bondadm' Guide</a>
+        <br>
+        <a href="/documentation/The%20%27options%20Guide/options.html">The 'options' Guide</a>
+        <br>
+        <a href="/documentation/The%20OviOS%20HA%20Cluster%20Guide/Cluster%20Guide.html">The OviOS HA Cluster Guide</a>
+        <br><br><br>
+      </div>
+      <div class="col-md-3 div-footer">
+        <h5>Technology</h5>
+        <br>
+        <a href="/nav-content/download/download.html">Download</a>
+        <br>
+        <a href="/nav-content/use-cases/use-cases.html">Use Cases</a>
+        <br>
+        <a href="/nav-content/FAQ/FAQ.html">FAQ & Features</a>
+        <br>
+        <a href="/nav-content/Services/services.html">Services</a>
+        <br><br><br>
+      </div>
+      <div class="col-md-3 div-footer">
+        <h5>Contact</h5>
+        <br>
+        <a href="/nav-content/contact/contact.html">ovi@ovios.org</a>
+      </div>
+    </div>
+    <div class="social-media-logos">
+      <a href="https://twitter.com/ovioslinux" target="_blank">
+        <i class="fa-brands fa-twitter"></i></a>
+      <a href="https://www.youtube.com/c/oviosorgstorage/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      <p class="copyright-text">Copyright © 2012-2022 OviOS Linux</p>
+    </div>
+  </footer>
+    
+    
+    <!-- Script -->
+    <script src="/documentation/The%20%27bondadm%27%20Guide/bondadm.79d14585.js"></script>
+  </body>
+</html>

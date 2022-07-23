@@ -1,3 +1,4 @@
+@import "https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600&display=swap";
 html {
   box-sizing: border-box;
 }
@@ -40,8 +41,12 @@ footer {
   background: #2e086b;
 }
 
-.title-section {
-  padding-top: 4%;
+#text-title {
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+  font-family: Noto Serif KR, serif;
+  position: relative;
 }
 
 .observer-section {
@@ -77,19 +82,28 @@ footer {
   padding-bottom: 5%;
 }
 
-.server-container, .cloud-container {
-  width: auto;
+.server-container, .cloud-container, .get-started-container {
   border-radius: 15px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 1%;
   transition: transform .3s ease-out;
 }
 
-.server-container:hover, .cloud-container:hover {
+.server-container:hover, .cloud-container:hover, .get-started-container:hover {
   color: #774cbb;
   cursor: pointer;
   background-color: #22242770;
   transform: translate(0, -10px);
+}
+
+.futures-img {
+  width: 60%;
+}
+
+.futures-title {
+  font-family: Noto Serif KR, serif;
+  font-size: medium;
 }
 
 .features-text {
@@ -187,6 +201,7 @@ img {
 }
 
 .plain-text {
+  text-align: left;
   color: #fff;
   background-color: #22242773;
   border-radius: 15px;
@@ -228,6 +243,10 @@ img {
   font-size: .75rem;
 }
 
+.hidden {
+  display: none;
+}
+
 @media (max-width: 1220px) {
   video {
     width: 750px;
@@ -236,8 +255,9 @@ img {
     display: block;
   }
 
-  h1 {
-    padding-top: 0%;
+  #text-title {
+    padding-top: 6rem;
+    font-size: xx-large;
   }
 
   .setup-video {
@@ -247,7 +267,7 @@ img {
     padding-bottom: 3rem;
   }
 
-  .server-container, .cloud-container {
+  .server-container, .cloud-container, .get-started-container {
     margin-top: 8%;
   }
 
@@ -277,11 +297,23 @@ img {
   .carousel-inner h2 {
     margin-left: -250px;
   }
+
+  .download-video {
+    width: 300px;
+    height: 300px;
+    padding-bottom: 3rem;
+  }
 }
 
 @media (max-width: 414px) {
+  body {
+    margin-left: 0;
+    margin-right: -260px;
+    font-size: larger;
+  }
+
   .navbar {
-    width: 80%;
+    max-width: 100%;
   }
 
   .navbar-logo, .navbar-brand {
@@ -289,14 +321,14 @@ img {
   }
 
   video {
-    width: 400px;
-    height: 200px;
+    width: 600px;
+    height: 400px;
     margin: auto;
     display: block;
   }
 
-  #textTitle h1 {
-    font-size: 150%;
+  #text-title {
+    font-size: larger;
   }
 
   .setup-video {
@@ -309,6 +341,59 @@ img {
   .carousel-inner h2 {
     margin-left: -150px;
   }
+
+  .download-body-tag {
+    margin-left: 10px;
+    margin-right: -170px;
+    font-size: larger;
+  }
+
+  .download-video {
+    width: 200px;
+    height: 150px;
+    padding-bottom: 3rem;
+  }
+
+  .download-btns {
+    width: 51%;
+    margin-left: 25%;
+  }
+}
+
+.d-title {
+  text-align: center;
+  margin-left: -4rem;
+}
+
+.d-title h1 {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+}
+
+.d-title h2 {
+  padding-bottom: 3rem;
+}
+
+.download-btns {
+  padding-bottom: 3rem;
+  transition: transform .3s ease-out;
+}
+
+.download-btns:hover {
+  cursor: pointer;
+  transform: translate(0, -10px);
+}
+
+.download-video-container {
+  text-align: center;
+  color: #fff;
+  padding-top: 3rem;
+}
+
+.download-video {
+  width: 800px;
+  height: 800px;
+  padding-bottom: 3rem;
 }
 
 /*# sourceMappingURL=index.3a01df49.css.map */

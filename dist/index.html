@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -32,7 +32,7 @@
               <a href="" class="nav-link">Home</a>
             </li>
             <li class="navbar-item">
-              <a href="https://www.ovios.org/download-ovios-linux" class="nav-link">Download</a>
+              <a href="/nav-content/download/download.html" class="nav-link">Download</a>
             </li>
             <li class="navbar-item">
               <div class="dropdown">
@@ -41,37 +41,40 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                   <li>
-                    <a class="dropdown-item active" href="https://www.ovios.org/documentation/the-admin-guide">The Admin Guide</a>
+                    <a class="dropdown-item" href="/documentation/Documentation/documentation.html">Documentation</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="https://www.ovios.org/documentation/system-backup-and-system-live-guide">System backup and system live guide</a>
+                    <a class="dropdown-item" href="/documentation/The%20admin%20guide/adminguide.html">The Admin Guide</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="https://www.ovios.org/documentation/the-autosnap-guide">The 'autosnap' Guide</a>
+                    <a class="dropdown-item" href="/documentation/System%20backup%20and%20system%20live%20guide/system_backup.html">System backup and system live guide</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="https://www.ovios.org/documentation/the-bondadm-guide">The 'bondadm' Guide</a>
+                    <a class="dropdown-item" href="/documentation/The%20autosnap%20Guide/autosnap.html">The 'autosnap' Guide</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="https://www.ovios.org/documentation/the-options-guide">The 'options' Guide</a>
+                    <a class="dropdown-item" href="/documentation/The%20%27bondadm%27%20Guide/bondadm.html">The 'bondadm' Guide</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="https://www.ovios.org/documentation/the-ovios-ha-cluster-guide">The OviOS HA Cluster Guide</a>
+                    <a class="dropdown-item" href="/documentation/The%20%27options%20Guide/options.html">The 'options' Guide</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/documentation/The%20OviOS%20HA%20Cluster%20Guide/Cluster%20Guide.html">The OviOS HA Cluster Guide</a>
                   </li>
                 </ul>
               </div>
             </li>
             <li class="navbar-item">
-              <a class="nav-link" href="https://www.ovios.org/use-cases">Use Cases</a>
+              <a class="nav-link" href="/nav-content/use-cases/use-cases.html">Use Cases</a>
             </li>
             <li class="navbar-item">
-              <a class="nav-link" href="https://www.ovios.org/faqs-features">FAQ & Features</a>
+              <a class="nav-link" href="/nav-content/FAQ/FAQ.html">FAQ & Features</a>
             </li>
             <li class="navbar-item">
-              <a class="nav-link" href="https://www.ovios.org/contact">Contact</a>
+              <a class="nav-link" href="/nav-content/contact/contact.html">Contact</a>
             </li>
             <li class="navbar-item">
-              <a class="nav-link" href="https://www.ovios.org/services">Services</a>
+              <a class="nav-link" href="/nav-content/Services/services.html">Services</a>
             </li>
           </ul>
         </div>
@@ -80,14 +83,18 @@
     <!-- Video -->
     <section class="title-section" id="title-section">
       <div class="row" id="firstPageContainer">
-        <div class="col-xl-6" id="videolLogo">
-          <video width="1200" height="600" playsinline="" autoplay="" muted="" loop="">
-            <source src="/CuLinuxMic.954931f7.mp4" type="video/mp4">
-            <!-- <source src="Images/CuLinuxMic.ogg" type="video/ogg"> -->
-          </video>
+        <div class="text-title-container">
+          <h1 id="text-title">
+            Welcome to the OviOS Linux distribution website
+          </h1>
         </div>
-        <div class="col-xl-6" id="textTitle">
-          <h1>Welcome to the OviOS Linux distribution website</h1>
+        <div id="video-Logo">
+          <video width="1200" height="600" playsinline="" autoplay="" muted="" loop="" poster="/VideoLogo.70321110.jpg">
+            <source src="/CuLinuxMic.954931f7.mp4" type="video/mp4">
+            <source src="/CuLinuxMic.e3c4f57c.ogv" type="video/ogg">
+            <source src="/CuLinuxMic.5640e4a0.webm" type="video/webm">
+            <p>Your browser doesn't support this video.</p>
+          </video>
         </div>
       </div>
     </section>
@@ -95,30 +102,77 @@
     <!-- Features -->
     <section class="features observer-section">
       <div class="row feature-container">
-        <div class="col-md-6 server-container">
-          <a href="https://www.ovios.org/use-cases" target="_blank">
+        <div class="col-md-4 server-container">
+          <a href="/nav-content/use-cases/use-cases.html">
             <div>
-              <h4>Run OviOS in your own Datacenter</h4>
-              <i class="fa-solid fa-server"></i>
-              <p class="features-text">
+              <h4 class="futures-title">Run OviOS in your own Datacenter</h4>
+              <img src="/database%20copy.a71c20cf.png" alt="" class="futures-img">
+              <p class="features-text" style="font-size: 90%">
                 Install OviOS on your own HW and take advantage of all features
                 and never worry about performance.
               </p>
             </div>
           </a>
         </div>
-        <div class="col-md-6 cloud-container">
+        <div class="col-md-4 cloud-container">
           <a href="https://hub.docker.com/r/ovios/ovios" target="_blank">
             <div>
-              <h4>Run OviOS in the cloud as a container</h4>
-              <i class="fa-solid fa-cloud-arrow-down"></i>
-              <p class="features-text">
+              <h4 class="futures-title">
+                Run OviOS in the cloud as a container
+              </h4>
+              <img src="/download%20copy.a663b898.png" alt="" class="futures-img">
+              <p class="features-text" style="font-size: 90%">
                 Get the latest image from our docker page.
               </p>
             </div>
           </a>
         </div>
+        <div class="col-md-4 get-started-container">
+          <a href="">
+            <div>
+              <h4 class="futures-title">Getting started with OviOS Linux.</h4>
+              <img src="/getStarted.5ebba5c4.png" alt="" class="futures-img">
+              <p class="features-text" style="font-size: 90%">
+                How to get started with OviOS Linux.
+              </p>
+            </div>
+          </a>
+        </div>
       </div>
+      <!-- Plain text -->
+      <section class="observer-section">
+        <div class="plain-text hidden">
+          <p>
+            All packages have been built and tested in house. A list of
+            installed packages can be found here.
+          </p>
+          <p>
+            OviOS uses pacman as a package manager. However there is no relation
+            between Arch Linux or any other Linux distro and OviOS Linux.
+          </p>
+          <p>
+            The system is provided with all needed packages for a stable storage
+            server. Due to the way it's built, storage admins can add more
+            packages, by building from source.
+          </p>
+          <p>There are 2 ways this can be achieved:</p>
+          <ol>
+            <li>
+              Build using the general build method (./configure && make && make
+              install)
+            </li>
+            <li>
+              Build using makepkg and a PKGBUILD. See and example here. or send
+              a request for a specific package via email / contact form.
+            </li>
+          </ol>
+          <p>
+            With OviOS Linux the user has complete control over how the system
+            should work, what extra packages are needed and what services should
+            run.
+          </p>
+        </div>
+      </section>
       <div class="text-description">
         <p>
           &nbsp&nbsp&nbsp&nbsp<strong>OviOS Linux</strong> is a specialized
@@ -126,7 +180,7 @@
           unified storage server. It requires little to no knowledge of Linux,
           NFS, SMB or iSCSI protocols to create a fully functional storage
           server in less than 30 minutes, simply by following the 4 steps in the
-          <a href="https://www.ovios.org/documentation/the-admin-guide" target="_blank" style="text-decoration-line: underline">Admin Guide</a>
+          <a href="/documentation/The%20admin%20guide/adminguide.html" style="text-decoration-line: underline">Admin Guide</a>
           .
         </p>
         <p>
@@ -144,7 +198,6 @@
 
     <!-- Cards -->
     <section class="observer-section">
-      <h2>OviOS Linux principles:</h2>
       <div class="row cards">
         <div class="col-md-6 mt-5">
           <div href="" class="pop">
@@ -301,41 +354,6 @@
       </div>
     </section>
 
-    <!-- Plain text -->
-    <section class="observer-section">
-      <div class="plain-text">
-        <p>
-          All packages have been built and tested in house. A list of installed
-          packages can be found here.
-        </p>
-        <p>
-          OviOS uses pacman as a package manager. However there is no relation
-          between Arch Linux or any other Linux distro and OviOS Linux.
-        </p>
-        <p>
-          The system is provided with all needed packages for a stable storage
-          server. Due to the way it's built, storage admins can add more
-          packages, by building from source.
-        </p>
-        <p>There are 2 ways this can be achieved:</p>
-        <ol>
-          <li>
-            Build using the general build method (./configure && make && make
-            install)
-          </li>
-          <li>
-            Build using makepkg and a PKGBUILD. See and example here. or send a
-            request for a specific package via email / contact form.
-          </li>
-        </ol>
-        <p>
-          With OviOS Linux the user has complete control over how the system
-          should work, what extra packages are needed and what services should
-          run.
-        </p>
-      </div>
-    </section>
-
     <footer>
       <div class="row div-container">
         <div class="col-md-3 div-footer sign">
@@ -347,35 +365,35 @@
         <div class="col-md-3 div-footer">
           <h5>Documentation</h5>
           <br>
-          <a href="https://www.ovios.org/documentation/the-admin-guide">The Admin Guide</a>
+          <a href="/documentation/The%20admin%20guide/adminguide.html">The Admin Guide</a>
           <br>
-          <a href="https://www.ovios.org/documentation/system-backup-and-system-live-guide">System backup and system live guide</a>
+          <a href="/documentation/System%20backup%20and%20system%20live%20guide/system_backup.html">System backup and system live guide</a>
           <br>
-          <a href="https://www.ovios.org/documentation/the-autosnap-guide">The 'autosnap' Guide</a>
+          <a href="/documentation/The%20autosnap%20Guide/autosnap.html">The 'autosnap' Guide</a>
           <br>
-          <a href="https://www.ovios.org/documentation/the-bondadm-guide">The 'bondadm' Guide</a>
+          <a href="/documentation/The%20%27bondadm%27%20Guide/bondadm.html">The 'bondadm' Guide</a>
           <br>
-          <a href="https://www.ovios.org/documentation/the-options-guide">The 'options' Guide</a>
+          <a href="/documentation/The%20%27options%20Guide/options.html">The 'options' Guide</a>
           <br>
-          <a href="https://www.ovios.org/documentation/the-ovios-ha-cluster-guide">The OviOS HA Cluster Guide</a>
+          <a href="/documentation/The%20OviOS%20HA%20Cluster%20Guide/Cluster%20Guide.html">The OviOS HA Cluster Guide</a>
           <br><br><br>
         </div>
         <div class="col-md-3 div-footer">
           <h5>Technology</h5>
           <br>
-          <a href="https://www.ovios.org/download-ovios-linux">Download</a>
+          <a href="/nav-content/download/download.html">Download</a>
           <br>
-          <a href="https://www.ovios.org/use-cases">Use Cases</a>
+          <a href="/nav-content/use-cases/use-cases.html">Use Cases</a>
           <br>
-          <a href="https://www.ovios.org/faqs-features">FAQ & Features</a>
+          <a href="/nav-content/FAQ/FAQ.html">FAQ & Features</a>
           <br>
-          <a href="https://www.ovios.org/services">Services</a>
+          <a href="/nav-content/Services/services.html">Services</a>
           <br><br><br>
         </div>
         <div class="col-md-3 div-footer">
           <h5>Contact</h5>
           <br>
-          <a href="https://www.ovios.org/contact">ovi@ovios.org</a>
+          <a href="/nav-content/contact/contact.html">ovi@ovios.org</a>
         </div>
       </div>
       <div class="social-media-logos">

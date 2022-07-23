@@ -1,0 +1,172 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #000;
+  margin: 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  padding-left: 10%;
+  font-family: Open Sans, Poppins, sans-serif;
+  font-size: 4rem;
+  line-height: 1.5;
+}
+
+h2 {
+  color: #fff;
+  padding-left: 10%;
+  font-family: Open Sans, Poppins, sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+footer {
+  color: #fff;
+  background: #2e086b;
+}
+
+.title {
+  padding-top: 150px;
+  padding-bottom: 3%;
+}
+
+.buttons-container {
+  justify-content: center;
+  display: flex;
+}
+
+.mini-titles a {
+  width: 350px;
+  margin-bottom: 5px;
+  margin-left: 10%;
+  font-size: larger;
+  text-decoration: underline;
+  display: block;
+}
+
+.documentation-buttons button {
+  width: 280px;
+  color: #fff;
+  background-color: #2e086b;
+  border-radius: .35rem;
+  margin-bottom: 1rem;
+  margin-left: 10%;
+  padding: .6rem;
+  font-weight: bold;
+  transition: transform .3s ease-out;
+  display: block;
+}
+
+.documentation-buttons button:hover {
+  color: #fff;
+  background-color: #2e086b;
+  transform: translate(0, -5px);
+  box-shadow: .2rem .2rem .8rem .2rem #047edc77;
+}
+
+.plain-text {
+  color: #fff;
+  background-color: #22242773;
+  border-radius: 15px;
+  margin: 3rem 15rem;
+  padding: 2rem;
+  box-shadow: 0 1.3125rem 1.625rem #047edc2c;
+}
+
+.old-type {
+  width: 650px;
+  text-align: left;
+  background-color: #fffcfc11;
+  background-clip: padding-box;
+  border: .75pt solid #ffffff1f;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 4pt;
+  font-family: Source Code Pro;
+  font-weight: normal;
+}
+
+.div-container {
+  text-align: center;
+  padding: 5rem;
+  display: flex;
+}
+
+.div-footer {
+  justify-content: center;
+  position: relative;
+}
+
+.social-media-logos {
+  text-align: center;
+  padding: 2rem;
+  font-size: 3rem;
+}
+
+.fa-twitter:hover {
+  cursor: pointer;
+  color: #00acee;
+}
+
+.fa-youtube:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.copyright-text {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: .75rem;
+}
+
+@media (max-width: 1220px) {
+  .plain-text {
+    margin: 1rem 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .sign {
+    display: none;
+  }
+
+  .buttons-container {
+    display: block;
+  }
+
+  .documentation-buttons {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 414px) {
+  body {
+    margin-left: 0;
+    margin-right: -260px;
+    font-size: larger;
+  }
+
+  .navbar {
+    max-width: 100%;
+  }
+
+  .navbar-logo, .navbar-brand {
+    width: 45px;
+  }
+
+  #textTitle h1 {
+    font-size: 150%;
+  }
+}
+
+/*# sourceMappingURL=adminguide.49896acd.css.map */

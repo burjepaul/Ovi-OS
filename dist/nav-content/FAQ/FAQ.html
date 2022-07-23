@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <title>OviOS Linux</title>
+    <link rel="icon" type="image/png" href="/Favicon.bf9a340b.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/nav-content/FAQ/FAQ.48401c6f.css">
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <section class="navigation-section" id="nav-Section">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark py-0">
+        <a href="">
+          <img class="navbar-logo" src="/LogoImage.21dea4b4.png" style="margin-left: 15%" alt="">
+        </a>
+        <a class="navbar-brand" style="margin-left: 1%" href="">Ovi OS Linux</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav ms-auto">
+            <li class="navbar-item">
+              <a href="/index.html" class="nav-link">Home</a>
+            </li>
+            <li class="navbar-item">
+              <a href="/nav-content/download/download.html" class="nav-link">Download</a>
+            </li>
+            <li class="navbar-item">
+              <div class="dropdown">
+                <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                  Documentation
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                  <li>
+                    <a class="dropdown-item" href="/documentation/Documentation/documentation.html">Documentation</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/documentation/The%20admin%20guide/adminguide.html">The Admin Guide</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/documentation/System%20backup%20and%20system%20live%20guide/system_backup.html">System backup and system live guide</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/documentation/The%20autosnap%20Guide/autosnap.html">The 'autosnap' Guide</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/documentation/The%20%27bondadm%27%20Guide/bondadm.html">The 'bondadm' Guide</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/documentation/The%20%27options%20Guide/options.html">The 'options' Guide</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/documentation/The%20OviOS%20HA%20Cluster%20Guide/Cluster%20Guide.html">The OviOS HA Cluster Guide</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="navbar-item">
+              <a class="nav-link" href="/nav-content/use-cases/use-cases.html">Use Cases</a>
+            </li>
+            <li class="navbar-item">
+              <a class="nav-link" href="">FAQ & Features</a>
+            </li>
+            <li class="navbar-item">
+              <a class="nav-link" href="/nav-content/contact/contact.html">Contact</a>
+            </li>
+            <li class="navbar-item">
+              <a class="nav-link" href="/nav-content/Services/services.html">Services</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+
+    <!-- Title section -->
+    <div class="d-title">
+      <h1>FAQs & Features</h1>
+    </div>
+
+    <!-- FAQ's containers -->
+    <h2 class="titles">FAQs:</h2>
+    <div class="page-container">
+      <div class="FAQ-container">
+        <p class="questions number-1">1. What is a storage OS?</p>
+        <p class="questions number-2">2. What OviOS is and isn’t?</p>
+        <p class="questions number-3">3. What is a LUN?</p>
+        <p class="questions number-4">
+          4. What is thin and thick provisioning?
+        </p>
+        <p class="questions number-5">5. What is an iSCSI target?</p>
+        <p class="questions number-6">6. What is a volume?</p>
+        <p class="questions number-7">7. What is NFS and SMB?</p>
+        <p class="questions number-8">
+          8. Does OviOS support remote authentication?
+        </p>
+        <p class="questions number-9">9. What are snapshots?</p>
+        <p class="questions number-10">
+          10. What operating systems does OviOS Linux support?
+        </p>
+      </div>
+      <div class="answer-container">
+        <div class="box answer-1 hidden">
+          <p>
+            A storage OS is an operating system for servers that is designed and
+            built around data availability, high-performance and stability.
+          </p>
+          <p>
+            Depending on it’s features, it will include storage protocols such
+            as NFS, SMB, iSCSI and FC. OviOS Linux uses iSCSI, NFS and SMB by
+            default. FC and FCoE can be manually configured, by adding the
+            necessary drivers and modules.
+          </p>
+          <p>
+            Usually storage OSs aren’t concerned with graphics and audio drivers
+            or others not needed for it’s purpose. OviOS does not include any of
+            those.
+          </p>
+        </div>
+
+        <div class="box answer-2 hidden">
+          <p>
+            OviOS is a highly performant storage OS which can be used to provide
+            storage to different clients via iSCSI, NFS, SMB and FTP.
+          </p>
+          <p>
+            OviOS is not suitable for desktops, laptops, media servers. It
+            doesn’t provide online repositories, however packages can be
+            upgraded manually non-disruptively.
+          </p>
+        </div>
+
+        <div class="box answer-3 hidden">
+          <p>
+            A Logical Unit Number is a number that identifies a block device
+            created on the storage system.
+          </p>
+          <p>
+            Using SCSI commands via TCP/IP networks, clients can connect to
+            OviOS LUNs and use them as regular disks. OviOS LUNs can be thin or
+            thick provisioned.
+          </p>
+        </div>
+
+        <div class="box answer-4 hidden">
+          <p>
+            When the admin creates a thin LUN, the size assigned to the new LUN
+            is not reserved in the storage pool, as opposed to thick LUNs which
+            reserve the space in the pool when created.
+          </p>
+          <p>
+            With thin LUNs, when the usage on the LUNs at client level changes
+            due to data being deleted, the storage system can reflect this
+            change if the client initiates UNMAP commands to tell the storage OS
+            about the change. This way the admin can over provision the storage
+            pool, but there must be measures taken to ensure there is always
+            enough space on the pool.
+          </p>
+          <p>
+            Although the OviOS commands have implemented thin and thick
+            provisioning, the functionality is not yet implemented at filesystem
+            level. ZFS on Linux doesn’t provide yet UNMAP support. LUNs can
+            still be created and used as thin, but the OS will not know when
+            data is deleted inside the LUN.
+          </p>
+          <p>
+            OviOS recommends to create only thick LUNs until UNMAP will be
+            supported.
+          </p>
+        </div>
+
+        <div class="box answer-5 hidden">
+          <p>
+            In OviOS Linux an iSCSI target is a controller located on the iSCSI
+            server. The target can be accessed by iSCSI initiators to access the
+            LUNs. In OviOS you can create multiple targets, control which
+            initiators can access them, map multiple LUNs to each target.
+          </p>
+        </div>
+
+        <div class="box answer-6 hidden">
+          <p>
+            In OviOS Linux a volume is a filesystem that acts as a directory in
+            the storage pool. The volume can be shared to Windows clients as a
+            Network Drive via the SMB protocol, or to Linux and UNIX clients as
+            an NFS share.
+          </p>
+          <p>
+            When creating a volume, the admin can assign a volume size, which
+            reserves the space on the pool.
+          </p>
+        </div>
+
+        <div class="box answer-7 hidden">
+          <p>
+            NFS (Network File System) and SMB (Server Message Block) are
+            protocols used to share storage volumes to different clients. NFS is
+            used with UNIX like systems, while SMB is used with Windows clients.
+            OviOS has support for both protocols by default.
+          </p>
+        </div>
+
+        <div class="box answer-8 hidden">
+          <p>
+            Yes. OviOS supports Active Directory authentication for SMB clients,
+            by joining the system to a windows Domain Controller. OviOS shell
+            provides a tool for this purpose, called smbovios
+          </p>
+          <p>
+            OviOS also supports NIS authentication, by using the NIS client
+            feature.
+          </p>
+        </div>
+
+        <div class="box answer-9 hidden">
+          <p>
+            OviOS supports copy-in-time snapshots for volumes, LUNs and pools. A
+            snapshot can be taken manually at any time or scheduled, without any
+            impact on data access or performance.
+          </p>
+          <p>One can restore volumes , LUNs or entire pools from snapshots.</p>
+          <p>
+            The admin can also use the replication feature and replicate pools,
+            volumes or LUNs to a secondary OviOS storage system, for disaster
+            recovery scenarios.
+          </p>
+        </div>
+
+        <div class="box answer-10 hidden">
+          <p>
+            <strong>
+              OviOS has been tested and supports the following client operating
+              systems:</strong>
+          </p>
+          <p>
+            <strong>With iSCSI:</strong> ESXi 4.x, 5.x and 6.x ; Windows 2007,
+            8, 2008, 2012 ; Linux ; the BSD family ; Solaris 11 and the Illumos
+            Family
+          </p>
+          <p>
+            <strong>10.2. With NFS:</strong> ESXi 4.x, 5.x and 6.x ; Linux ; the
+            BSD family ; Solaris 11 and the Illumos Family, Windows NFS client
+          </p>
+          <p>
+            <strong>10.3. With SMB v1, v2 and v3: </strong> Windows 2007, 8,
+            2008, 2012, Windows 10 ; Linux ; Chrome OS.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <h2 class="'titles">Main features:</h2>
+    <div class="feature-container">
+      <div class="FAQ-container">
+        <p class="feature feature-number-1">1. HA Clustering</p>
+        <p class="feature feature-number-2">2. Replication</p>
+        <p class="feature feature-number-3">3. Snapshots</p>
+        <p class="feature feature-number-4">4. ZFS Storage File System</p>
+        <p class="feature feature-number-5">5. Virtualization.</p>
+        <p class="feature feature-number-6">
+          6. Run from a USB, or run it as a live System
+        </p>
+        <p class="feature feature-number-7">
+          7. iSCSI, NFS and SMB server features by default
+        </p>
+        <p class="feature feature-number-8">8. Software RAID</p>
+        <p class="feature feature-number-9">9. Data compression</p>
+      </div>
+      <div class="feature-answer-container">
+        <div class="box feature-answer-1 hidden">
+          <p>
+            OviOS can be configured as an HA cluster using 2 or 3 OviOS nodes, with corosync and pacemaker.
+          </p>
+          <p>
+            For automatic failover and scsi fencing, the required setup is 3 nodes.
+          </p>
+        </div>
+
+        <div class="box feature-answer-2 hidden">
+          <p>
+            Install a second OviOS Linux server and set up replication from the production server to the backup server.
+          </p>
+          <p>
+            Your data will be available at all times on the backup server for disaster recovery scenarios.
+          </p>
+        </div>
+
+        <div class="box feature-answer-3 hidden">
+          <p>
+            The ability to snapshot LUNs, volumes and / or pools without disrupting data traffic. Snapshots can be scheduled or taken manually, In case of accidental data deletion, a volume or LUN can be reverted to a last known good snapshot.
+          </p>
+        </div>
+
+        <div class="box feature-answer-4 hidden">
+          <p>
+            OviOS uses the ZFS file system for it's storage pools.
+          </p>
+          <p>
+            The ZFS storage filesystem is the most advanced and performant filesystem available today for storage systems. Together with snapshots, LUNs, Volumes, its complex RAID level and many more features there is virtually little that cannot be achieved with ZFS.
+          </p>
+          <p>
+            OviOS Linux provides all these features. Contact us for professional services to find out how we can help.
+          </p>
+        </div>
+
+        <div class="box feature-answer-5 hidden">
+          <p>
+            OviOS Linux can be virtualized or installed on physical hardware.
+          </p>
+        </div>
+
+        <div class="box feature-answer-6 hidden">
+          <p>
+            OviOS Linux can be installed on a USB drive, or can be run from the live medium. OviOS will create a temporary writable filesystem in the system's RAM and thus can run and serve data without being installed. Read the OviOS live Guide to see how you can save your settings even after a reboot in the live system.
+          </p>
+        </div>
+
+        <div class="box feature-answer-7 hidden">
+          <p>
+            Once installed the system can be immediately used as an iSCSI, NFS and SMB server.
+          </p>
+          <p>
+            The default configuration has been tested and optimized to achieve best performance with VMWare, Linux and Windows clients for iSCSI, VMWare and Linux as NFS clients and Windows as SMB clients.
+          </p>
+          <p>
+            OviOS supports SMB protocol versions 1 (also known as NT1 or CIFS) ,SMBv2 and SMBv3.
+          </p>
+        </div>
+
+        <div class="box feature-answer-8 hidden">
+          <p>
+            <strong>RAID0</strong> or stripped pools. This configuration provides no data protection in case of a drive failure, it does provide checksumming to prevent silent data corruption.
+          </p>
+          <p>
+            <strong>RAID1</strong> or mirrored pools. Create storage pools using mirrors of disks. It can protect against a large amount of failed drives, but has impact on the storage capacity.
+          </p>
+          <p>
+            <strong>RAID10</strong> or stripped mirrored storage pools. Creates pairs of stripped mirrors which provide the best random read writes performances but reduces the available storage capacity by 50%.
+          </p>
+          <p>
+            <strong>RAID5</strong> uses dynamic stripe width, which gives better performance then traditional RAID5 configurations. Allows for one disk failure.
+          </p>
+          <p>
+            <strong>RAID6</strong> same as RAID5 but allows for 2 disk failures without data loss. Or RAID6+ which allows for 3 disk failures without data loss.
+          </p>
+        </div>
+        <div class="box feature-answer-9 hidden">
+          <p>
+            Data compression which saves space on compressible data and improves performance.
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <br>
+    <br>
+
+    <footer>
+      <div class="row div-container">
+        <div class="col-md-3 div-footer sign">
+          <a href="">
+            <img src="/Favicon%20copy.13a93fc1.png" width="130px" style="margin-left: 15%" alt="">
+            <a class="navbar-brand footer-text-logo" href="">Ovi OS Linux</a>
+          </a>
+        </div>
+        <div class="col-md-3 div-footer">
+          <h5>Documentation</h5>
+          <br>
+          <a href="/documentation/The%20admin%20guide/adminguide.html">The Admin Guide</a>
+          <br>
+          <a href="/documentation/System%20backup%20and%20system%20live%20guide/system_backup.html">System backup and system live guide</a>
+          <br>
+          <a href="/documentation/The%20autosnap%20Guide/autosnap.html">The 'autosnap' Guide</a>
+          <br>
+          <a href="/documentation/The%20%27bondadm%27%20Guide/bondadm.html">The 'bondadm' Guide</a>
+          <br>
+          <a href="/documentation/The%20%27options%20Guide/options.html">The 'options' Guide</a>
+          <br>
+          <a href="/documentation/The%20OviOS%20HA%20Cluster%20Guide/Cluster%20Guide.html">The OviOS HA Cluster Guide</a>
+          <br><br><br>
+        </div>
+        <div class="col-md-3 div-footer">
+          <h5>Technology</h5>
+          <br>
+          <a href="/nav-content/download/download.html">Download</a>
+          <br>
+          <a href="/nav-content/use-cases/use-cases.html">Use Cases</a>
+          <br>
+          <a href="/nav-content/FAQ/FAQ.html">FAQ & Features</a>
+          <br>
+          <a href="/nav-content/Services/services.html">Services</a>
+          <br><br><br>
+        </div>
+        <div class="col-md-3 div-footer">
+          <h5>Contact</h5>
+          <br>
+          <a href="/nav-content/contact/contact.html">ovi@ovios.org</a>
+        </div>
+      </div>
+      <div class="social-media-logos">
+        <a href="https://twitter.com/ovioslinux" target="_blank">
+          <i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.youtube.com/c/oviosorgstorage/videos" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <p class="copyright-text">Copyright © 2012-2022 OviOS Linux</p>
+      </div>
+    </footer>
+    <!-- Script -->
+    <script src="/nav-content/FAQ/FAQ.bb9a0110.js"></script>
+  </body>
+</html>
