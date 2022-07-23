@@ -158,7 +158,12 @@
     <!-- Video -->
     <section class="title-section" id="title-section">
       <div class="row" id="firstPageContainer">
-        <div class="col-xl-6" id="videolLogo">
+        <div class="text-title-container">
+          <h1 id="text-title">
+            Welcome to the OviOS Linux distribution website
+          </h1>
+        </div>
+        <div id="video-Logo">
           <video
             width="1200"
             height="600"
@@ -174,20 +179,17 @@
             <p>Your browser doesn't support this video.</p>
           </video>
         </div>
-        <div class="col-xl-6" id="textTitle">
-          <h1>Welcome to the OviOS Linux distribution website</h1>
-        </div>
       </div>
     </section>
 
     <!-- Features -->
     <section class="features observer-section">
       <div class="row feature-container">
-        <div class="col-md-6 server-container">
+        <div class="col-md-4 server-container">
           <a href="./nav-content/use-cases/use-cases.html">
             <div>
-              <h4>Run OviOS in your own Datacenter</h4>
-              <img src="Images/database copy.png" alt="" />
+              <h4 class="futures-title">Run OviOS in your own Datacenter</h4>
+              <img src="Images/database copy.png" alt="" class="futures-img" />
               <p class="features-text" style="font-size: 90%">
                 Install OviOS on your own HW and take advantage of all features
                 and never worry about performance.
@@ -195,18 +197,65 @@
             </div>
           </a>
         </div>
-        <div class="col-md-6 cloud-container">
+        <div class="col-md-4 cloud-container">
           <a href="https://hub.docker.com/r/ovios/ovios" target="_blank">
             <div>
-              <h4>Run OviOS in the cloud as a container</h4>
-              <img src="Images/download copy.png" alt="" />
+              <h4 class="futures-title">
+                Run OviOS in the cloud as a container
+              </h4>
+              <img src="Images/download copy.png" alt="" class="futures-img" />
               <p class="features-text" style="font-size: 90%">
                 Get the latest image from our docker page.
               </p>
             </div>
           </a>
         </div>
+        <div class="col-md-4 get-started-container">
+          <a href="">
+            <div>
+              <h4 class="futures-title">Getting started with OviOS Linux.</h4>
+              <img src="Images/getStarted.png" alt="" class="futures-img" />
+              <p class="features-text" style="font-size: 90%">
+                How to get started with OviOS Linux.
+              </p>
+            </div>
+          </a>
+        </div>
       </div>
+      <!-- Plain text -->
+      <section class="observer-section">
+        <div class="plain-text hidden">
+          <p>
+            All packages have been built and tested in house. A list of
+            installed packages can be found here.
+          </p>
+          <p>
+            OviOS uses pacman as a package manager. However there is no relation
+            between Arch Linux or any other Linux distro and OviOS Linux.
+          </p>
+          <p>
+            The system is provided with all needed packages for a stable storage
+            server. Due to the way it's built, storage admins can add more
+            packages, by building from source.
+          </p>
+          <p>There are 2 ways this can be achieved:</p>
+          <ol>
+            <li>
+              Build using the general build method (./configure && make && make
+              install)
+            </li>
+            <li>
+              Build using makepkg and a PKGBUILD. See and example here. or send
+              a request for a specific package via email / contact form.
+            </li>
+          </ol>
+          <p>
+            With OviOS Linux the user has complete control over how the system
+            should work, what extra packages are needed and what services should
+            run.
+          </p>
+        </div>
+      </section>
       <div class="text-description">
         <p>
           &nbsp&nbsp&nbsp&nbsp<strong>OviOS Linux</strong> is a specialized
@@ -241,7 +290,6 @@
 
     <!-- Cards -->
     <section class="observer-section">
-      <h2>OviOS Linux principles:</h2>
       <div class="row cards">
         <div class="col-md-6 mt-5">
           <div href="" class="pop">
@@ -493,41 +541,6 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
-    </section>
-
-    <!-- Plain text -->
-    <section class="observer-section">
-      <div class="plain-text">
-        <p>
-          All packages have been built and tested in house. A list of installed
-          packages can be found here.
-        </p>
-        <p>
-          OviOS uses pacman as a package manager. However there is no relation
-          between Arch Linux or any other Linux distro and OviOS Linux.
-        </p>
-        <p>
-          The system is provided with all needed packages for a stable storage
-          server. Due to the way it's built, storage admins can add more
-          packages, by building from source.
-        </p>
-        <p>There are 2 ways this can be achieved:</p>
-        <ol>
-          <li>
-            Build using the general build method (./configure && make && make
-            install)
-          </li>
-          <li>
-            Build using makepkg and a PKGBUILD. See and example here. or send a
-            request for a specific package via email / contact form.
-          </li>
-        </ol>
-        <p>
-          With OviOS Linux the user has complete control over how the system
-          should work, what extra packages are needed and what services should
-          run.
-        </p>
       </div>
     </section>
 

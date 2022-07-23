@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600&display=swap');
+
 html {
   box-sizing: border-box;
 }
@@ -42,9 +44,14 @@ footer {
 }
 
 
-.title-section {
-  padding-top: 4%;
+#text-title{
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Noto Serif KR', serif;
 }
+
 
 .observer-section {
   transition: transform 1s, opacity 1s;
@@ -81,8 +88,8 @@ footer {
 }
 
 .server-container,
-.cloud-container {
-  width: auto;
+.cloud-container,
+.get-started-container {
   border-radius: 15px;
   padding-top: 1%;
   margin-left: auto;
@@ -91,11 +98,21 @@ footer {
 }
 
 .server-container:hover,
-.cloud-container:hover {
+.cloud-container:hover,
+.get-started-container:hover {
   color: rgb(119, 76, 187);
   background-color: rgba(34, 36, 39, 0.438);
   cursor: pointer;
   transform: translate(0, -10px);
+}
+
+.futures-img{
+  width: 60%;
+}
+
+.futures-title{
+  font-family: 'Noto Serif KR', serif;
+  font-size: medium;
 }
 
 .features-text {
@@ -196,6 +213,7 @@ img {
 }
 
 .plain-text {
+  text-align: left;
   color: #fff;
   margin: 3rem 15rem 3rem;
   padding: 1rem;
@@ -237,6 +255,10 @@ img {
   margin-top: 1rem;
 }
 
+.hidden{
+  display: none;
+}
+
 @media (max-width: 1220px) {
   video {
     width: 750px;
@@ -244,8 +266,10 @@ img {
     display: block;
     margin: auto;
   }
-  h1 {
-    padding-top: 0%;
+
+  #text-title {
+    padding-top: 6rem;
+    font-size: xx-large;
   }
 
   .setup-video {
@@ -256,7 +280,8 @@ img {
   }
 
   .server-container,
-  .cloud-container {
+  .cloud-container,
+  .get-started-container {
     margin-top: 8%;
   }
 
@@ -321,8 +346,8 @@ img {
     margin: auto;
   }
 
-  #textTitle h1 {
-    font-size: 150%;
+  #text-title{
+    font-size: larger;
   }
 
   .setup-video {
