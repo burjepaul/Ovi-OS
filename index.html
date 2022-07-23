@@ -256,41 +256,149 @@
           </p>
         </div>
       </section>
-      <div class="text-description">
-        <p>
-          &nbsp&nbsp&nbsp&nbsp<strong>OviOS Linux</strong> is a specialized
-          Linux distribution aimed at creating the fastest and easiest Linux
-          unified storage server. It requires little to no knowledge of Linux,
-          NFS, SMB or iSCSI protocols to create a fully functional storage
-          server in less than 30 minutes, simply by following the 4 steps in the
-          <a
-            href="./documentation/The admin guide/adminguide.html"
-            style="text-decoration-line: underline"
-            >Admin Guide</a
-          >
-          .
-        </p>
-        <p>
-          &nbsp&nbsp&nbsp&nbspOviOS was the first storage system based on Linux
-          to implement the
-          <a
-            href="https://www.kernel.org/doc/html/latest/block/blk-mq.html"
-            target="_blank"
-            style="text-decoration-line: underline"
-            >blk_mq</a
-          >
-          IO Queueing mechanism in a production environment together with the
-          highly advanced ZFS storage filesystem. blk_mq allows for over 15
-          million IOPS with high-performance flash devices on 8 socker-servers,
-          though even single and dual socket servers also benefit considerably
-          from blk-mq.
-        </p>
-      </div>
     </section>
 
     <!-- Cards -->
     <section class="observer-section">
       <div class="row cards">
+        <div class="col-md-6 mt-5">
+          <div href="" class="pop">
+            <div class="bubble">
+              <div class="inner">
+                <img src="Images/about.png" alt="" />
+              </div>
+            </div>
+            <h3>About</h3>
+            <em></em>
+            <p>
+              &nbsp&nbsp&nbsp&nbsp<strong>OviOS Linux</strong> is a specialized
+              Linux distribution aimed at creating the fastest and easiest Linux
+              unified storage server. It requires little to no knowledge of Linux,
+              NFS, SMB or iSCSI protocols to create a fully functional storage
+              server in less than 30 minutes, simply by following the 4 steps in the
+              <a
+                href="./documentation/The admin guide/adminguide.html"
+                style="text-decoration-line: underline"
+                >Admin Guide</a
+              >
+              .
+            </p>
+            <p>
+              &nbsp&nbsp&nbsp&nbspOviOS was the first storage system based on Linux
+              to implement the
+              <a
+                href="https://www.kernel.org/doc/html/latest/block/blk-mq.html"
+                target="_blank"
+                style="text-decoration-line: underline"
+                >blk_mq</a
+              >
+              IO Queueing mechanism in a production environment together with the
+              highly advanced ZFS storage filesystem. blk_mq allows for over 15
+              million IOPS with high-performance flash devices on 8 socker-servers,
+              though even single and dual socket servers also benefit considerably
+              from blk-mq.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 mt-5">
+          <div href="" class="pop">
+            <div class="bubble">
+              <div class="inner">
+                <img src="Images/iso.png" alt="" />
+              </div>
+            </div>
+            <h3>The OviOS Linux iso image</h3>
+            <em></em>
+            <p>
+              <div class="text-after-cards">
+                <p>
+                  The OviOS Linux iso image can also be used as a rescue image for ZFS
+                  on Linux systems. After the system starts, disable the skip import option and start
+                  zfs-admin:
+                </p>
+                <div class="text">
+                  <p
+                    style="
+                      background-clip: padding-box;
+                      width: 500px;
+                      background-color: rgba(255, 252, 252, 0.068);
+                      border-bottom: none;
+                      border-left: 0.75pt solid rgba(255, 255, 255, 0.122);
+                      border-right: 0.75pt solid rgba(255, 255, 255, 0.122);
+                      border-top: 0.75pt solid rgba(255, 255, 255, 0.122);
+                      margin-bottom: 0;
+                      margin-top: 0;
+                      padding-bottom: 0;
+                      padding-left: 4pt;
+                      padding-right: 4pt;
+                      padding-top: 0pt;
+                      text-align: left;
+                    "
+                  >
+                    <span style="font-family: Source Code Pro; font-weight: normal"
+                      >ovios-shell&gt; options skip.import off</span
+                    >
+                  </p>
+                  <p
+                    style="
+                      background-clip: padding-box;
+                      width: 500px;
+                      background-color: rgba(255, 252, 252, 0.068);
+                      border-bottom: 0.75pt solid rgba(255, 255, 255, 0.122);
+                      border-left: 0.75pt solid rgba(255, 255, 255, 0.122);
+                      border-right: 0.75pt solid rgba(255, 255, 255, 0.122);
+                      border-top: none;
+                      margin-bottom: 0;
+                      margin-top: 0;
+                      padding-bottom: 4pt;
+                      padding-left: 4pt;
+                      padding-right: 4pt;
+                      padding-top: 0;
+                      text-align: left;
+                      box-shadow: 0 0.4rem 0.8rem 0 rgba(4, 126, 220, 0.308);
+                    "
+                  >
+                    <span style="font-family: Source Code Pro; font-weight: normal"
+                      >ovios-shell&gt; options force.import on
+                    </span>
+                  </p>
+                  <p style="padding-top: 2rem">
+                    This option is needed if the pool was previously imported by a
+                    system with a different hostid:
+                  </p>
+                  <p
+                    style="
+                      background-clip: padding-box;
+                      width: 500px;
+                      background-color: rgba(255, 252, 252, 0.068);
+                      border-bottom: 0.75pt solid rgba(255, 255, 255, 0.122);
+                      border-left: 0.75pt solid rgba(255, 255, 255, 0.122);
+                      border-right: 0.75pt solid rgba(255, 255, 255, 0.122);
+                      border-top: 0.75pt solid rgba(255, 255, 255, 0.122);
+                      margin-bottom: 0;
+                      margin-top: 0;
+                      padding-bottom: 4pt;
+                      padding-left: 4pt;
+                      padding-right: 4pt;
+                      padding-top: 4pt;
+                      text-align: left;
+                      box-shadow: 0 0.4rem 0.8rem 0 rgba(4, 126, 220, 0.308);
+                    "
+                  >
+                    <span style="font-family: Source Code Pro; font-weight: normal"
+                      >ovios-shell&gt; zfs-admin start</span
+                    >
+                  </p>
+                  <br />
+                  <p>
+                    See the <a href="">OviOS Live guide</a> to learn how to use OviOS
+                    without installing.
+                  </p>
+                </div>
+              </div>
+            </p>
+          </div>
+        </div>
         <div class="col-md-6 mt-5">
           <div href="" class="pop">
             <div class="bubble">
@@ -375,99 +483,6 @@
               to learn how to build a system from scratch.
             </p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- End Cards -->
-    <section class="observer-section">
-      <div class="text-after-cards" style="padding-top: 3rem">
-        <h4>
-          The OviOS Linux iso image can also be used as a rescue image for ZFS
-          on Linux systems.
-        </h4>
-        <div class="text">
-          <p>
-            After the system starts, disable the skip import option and start
-            zfs-admin:
-          </p>
-          <p
-            style="
-              background-clip: padding-box;
-              width: 500px;
-              background-color: rgba(255, 252, 252, 0.068);
-              border-bottom: none;
-              border-left: 0.75pt solid rgba(255, 255, 255, 0.122);
-              border-right: 0.75pt solid rgba(255, 255, 255, 0.122);
-              border-top: 0.75pt solid rgba(255, 255, 255, 0.122);
-              margin-bottom: 0;
-              margin-top: 0;
-              padding-bottom: 0;
-              padding-left: 4pt;
-              padding-right: 4pt;
-              padding-top: 4pt;
-              text-align: left;
-            "
-          >
-            <span style="font-family: Source Code Pro; font-weight: normal"
-              >ovios-shell&gt; options skip.import off</span
-            >
-          </p>
-          <p
-            style="
-              background-clip: padding-box;
-              width: 500px;
-              background-color: rgba(255, 252, 252, 0.068);
-              border-bottom: 0.75pt solid rgba(255, 255, 255, 0.122);
-              border-left: 0.75pt solid rgba(255, 255, 255, 0.122);
-              border-right: 0.75pt solid rgba(255, 255, 255, 0.122);
-              border-top: none;
-              margin-bottom: 0;
-              margin-top: 0;
-              padding-bottom: 4pt;
-              padding-left: 4pt;
-              padding-right: 4pt;
-              padding-top: 0;
-              text-align: left;
-              box-shadow: 0 0.4rem 0.8rem 0 rgba(4, 126, 220, 0.308);
-            "
-          >
-            <span style="font-family: Source Code Pro; font-weight: normal"
-              >ovios-shell&gt; options force.import on
-            </span>
-          </p>
-          <p style="padding-top: 2rem">
-            This option is needed if the pool was previously imported by a
-            system with a different hostid:
-          </p>
-          <p
-            style="
-              background-clip: padding-box;
-              width: 500px;
-              background-color: rgba(255, 252, 252, 0.068);
-              border-bottom: 0.75pt solid rgba(255, 255, 255, 0.122);
-              border-left: 0.75pt solid rgba(255, 255, 255, 0.122);
-              border-right: 0.75pt solid rgba(255, 255, 255, 0.122);
-              border-top: 0.75pt solid rgba(255, 255, 255, 0.122);
-              margin-bottom: 0;
-              margin-top: 0;
-              padding-bottom: 4pt;
-              padding-left: 4pt;
-              padding-right: 4pt;
-              padding-top: 4pt;
-              text-align: left;
-              box-shadow: 0 0.4rem 0.8rem 0 rgba(4, 126, 220, 0.308);
-            "
-          >
-            <span style="font-family: Source Code Pro; font-weight: normal"
-              >ovios-shell&gt; zfs-admin start</span
-            >
-          </p>
-          <br />
-          <p>
-            See the <a href="">OviOS Live guide</a> to learn how to use OviOS
-            without installing.
-          </p>
         </div>
       </div>
     </section>
@@ -614,7 +629,7 @@
           target="_blank"
           ><i class="fa-brands fa-youtube"></i
         ></a>
-        <p class="copyright-text">Copyright © 2012-2022 OviOS Linux</p>
+        <p class="copyright-text">Copyright © 2012-2022 <a style="text-decoration:underline;" href="./nav-content/contact/contact.html">OviOS Linux</a></p>
       </div>
     </footer>
     <!-- Script -->
